@@ -24,8 +24,8 @@ This is the third and final part of the series, that covers the API and deployme
 
 This is a multi part post - you can find all related posts here:
 
-* [Part 1 - Problem, Architecture, next steps](/aws-root-account-management-for-sso-using-azure-active-directory-part-1/)
-* [Part 2 - Shared Mailboxes](/aws-root-account-management-for-sso-using-azure-active-directory-part-2/)
+* [Part 1 - Problem, Architecture, next steps](/aws-root-account-management-for-sso-using-azure-active-directory-part-1)
+* [Part 2 - Shared Mailboxes](/aws-root-account-management-for-sso-using-azure-active-directory-part-2)
 * Part 3 - API (You are here)
 
 ## API

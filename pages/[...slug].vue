@@ -30,7 +30,7 @@ defineOgImage({
 </script>
 
 <template>
-  <UPage class="mx-auto max-w-5xl p-4">
+  <UPage class="mx-auto max-w-5xl p-4 relative">
     <UPageHeader
       :title="page.title"
       class="py-4 sm:px-8"

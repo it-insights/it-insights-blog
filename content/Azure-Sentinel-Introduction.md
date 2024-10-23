@@ -22,7 +22,7 @@ This Post is Azure CloudShell compatible
 
 This is a multi part article with the following parts:
 
-* [Part 1 - Azure Sentinel Introduction](/azure-sentinel-introduction/)
+* [Part 1 - Azure Sentinel Introduction](/azure-sentinel-introduction)
 
 <!-- toc -->
 

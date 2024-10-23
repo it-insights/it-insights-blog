@@ -5,7 +5,7 @@ const page = ref(Number.parseInt(route.params.page as string) || 1)
 const limit = ref(7)
 const skip = computed(() => (page.value - 1) * limit.value)
 const count = await queryContent().count()
-const { data: posts } = await useAsyncData('posts', () => queryContent()
+const { data: posts } = await useAsyncData('index-posts', () => queryContent()
   .where({ _extension: 'md', author: { $ne: 'itinsights' } })
   .sort({ date: -1 })
   .skip(skip.value)
@@ -41,7 +41,7 @@ const links = [{
 </script>
 
 <template>
-  <UPage class="mx-auto max-w-5xl px-4 py-8">
+  <UPage class="mx-auto max-w-5xl px-4 py-8 relative">
     <template #left>
       <UAside :links="links" />
     </template>
@@ -72,7 +72,7 @@ const links = [{
       size="sm"
       show-last
       show-first
-      class="relative mt-8"
+      class="mt-8"
     />
   </UPage>
 </template>

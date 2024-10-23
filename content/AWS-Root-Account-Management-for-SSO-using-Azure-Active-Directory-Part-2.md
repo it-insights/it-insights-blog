@@ -22,9 +22,9 @@ This is the second part of the series, that covers the Shared Mailbox Setup.
 ## Introduction
 This is a multi part post - you can find all related posts here:
 
-* [Part 1 - Problem, Architecture, next steps](/aws-root-account-management-for-sso-using-azure-active-directory-part-1/)
+* [Part 1 - Problem, Architecture, next steps](/aws-root-account-management-for-sso-using-azure-active-directory-part-1)
 * Part 2 - Shared Mailboxes (You are here)
-* [Part 3 - API](/aws-root-account-management-for-sso-using-azure-active-directory-part-3/)
+* [Part 3 - API](/aws-root-account-management-for-sso-using-azure-active-directory-part-3)
 
 ## Shared Mailbox
 Each AWS-accounts root-users' e-mail address must be unique, therefore, we create several shared mailboxes with a lot of aliases as shown below:

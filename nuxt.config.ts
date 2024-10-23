@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/scripts',
     '@nuxthq/studio',
+    'nuxt-delay-hydration',
+    'nuxt-vitalizer',
   ],
   extends: ['@nuxt/ui-pro'],
 
@@ -98,6 +100,9 @@ export default defineNuxtConfig({
         ],
       },
     },
+  },
+  delayHydration: {
+    mode: 'init'
   },
 
   // Nitro

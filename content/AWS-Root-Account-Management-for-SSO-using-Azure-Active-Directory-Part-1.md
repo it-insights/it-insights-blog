@@ -21,8 +21,8 @@ Using a central IAM provider is certainly a great thing. While setting SSO up fo
 This is a multi part post - you can find all related posts here:
 
 * Part 1 - Challenge, Architecture, next steps (You are here)
-* [Part 2 - Shared Mailboxes](/aws-root-account-management-for-sso-using-azure-active-directory-part-2/)
-* [Part 3 - API](/aws-root-account-management-for-sso-using-azure-active-directory-part-3/)
+* [Part 2 - Shared Mailboxes](/aws-root-account-management-for-sso-using-azure-active-directory-part-2)
+* [Part 3 - API](/aws-root-account-management-for-sso-using-azure-active-directory-part-3)
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
 I used Azure Active Directory as the central IAM, but this topic is valid for all IAM solutions and even just a standalone AWS deployments. However, this post will not cover the actual setup of SSO and SCIM for AWS IAM Identity Center using Azure AD. You can find the official SSO and SCIM setup documentation [here](https://learn.microsoft.com/en-us/azure/active-directory/saas-apps/aws-single-sign-on-provisioning-tutorial).

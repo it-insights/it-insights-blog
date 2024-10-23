@@ -9,24 +9,24 @@
       "rewrite": "/azure-active-directory-license-assignment-for-groups/index.html"
     },
     {
-      "route": "/group-powerbi-measures",
-      "rewrite": "/group-powerbi-measures/index.html"
-    },
-    {
       "route": "/global-azure-bootcamp-2019",
       "rewrite": "/global-azure-bootcamp-2019/index.html"
+    },
+    {
+      "route": "/group-powerbi-measures",
+      "rewrite": "/group-powerbi-measures/index.html"
     },
     {
       "route": "/authors/jan-henrik-damaschke",
       "rewrite": "/authors/jan-henrik-damaschke/index.html"
     },
     {
-      "route": "/process-low-level-ntsecuritydescriptor",
-      "rewrite": "/process-low-level-ntsecuritydescriptor/index.html"
+      "route": "/openshift-on-azure-custom-dns",
+      "rewrite": "/openshift-on-azure-custom-dns/index.html"
     },
     {
-      "route": "/azure-devops-powershell-module-part-1",
-      "rewrite": "/azure-devops-powershell-module-part-1/index.html"
+      "route": "/microsoft-mvp-awards-2019",
+      "rewrite": "/microsoft-mvp-awards-2019/index.html"
     },
     {
       "route": "/authors/christoph-burmeister",
@@ -37,12 +37,20 @@
       "rewrite": "/authors/jacob-meissner/index.html"
     },
     {
-      "route": "/openshift-on-azure-custom-dns",
-      "rewrite": "/openshift-on-azure-custom-dns/index.html"
+      "route": "/process-low-level-ntsecuritydescriptor",
+      "rewrite": "/process-low-level-ntsecuritydescriptor/index.html"
     },
     {
-      "route": "/microsoft-mvp-awards-2019",
-      "rewrite": "/microsoft-mvp-awards-2019/index.html"
+      "route": "/azure-devops-powershell-module-part-1",
+      "rewrite": "/azure-devops-powershell-module-part-1/index.html"
+    },
+    {
+      "route": "/weekly-digest-for-twitter-with-logic-apps",
+      "rewrite": "/weekly-digest-for-twitter-with-logic-apps/index.html"
+    },
+    {
+      "route": "/static-websites-with-azure-part-1",
+      "rewrite": "/static-websites-with-azure-part-1/index.html"
     },
     {
       "route": "/german-special-characters-umlauts-with-autohotkey",
@@ -57,30 +65,6 @@
       "rewrite": "/enable-wake-on-lan-wol-with-powershell/index.html"
     },
     {
-      "route": "/weekly-digest-for-twitter-with-logic-apps",
-      "rewrite": "/weekly-digest-for-twitter-with-logic-apps/index.html"
-    },
-    {
-      "route": "/static-websites-with-azure-part-1",
-      "rewrite": "/static-websites-with-azure-part-1/index.html"
-    },
-    {
-      "route": "/aws-root-account-management-for-sso-using-azure-active-directory-part-2",
-      "rewrite": "/aws-root-account-management-for-sso-using-azure-active-directory-part-2/index.html"
-    },
-    {
-      "route": "/aws-root-account-management-for-sso-using-azure-active-directory-part-1",
-      "rewrite": "/aws-root-account-management-for-sso-using-azure-active-directory-part-1/index.html"
-    },
-    {
-      "route": "/aws-root-account-management-for-sso-using-azure-active-directory-part-3",
-      "rewrite": "/aws-root-account-management-for-sso-using-azure-active-directory-part-3/index.html"
-    },
-    {
-      "route": "/automatically-generate-powershell-markdown-documentation-part-1",
-      "rewrite": "/automatically-generate-powershell-markdown-documentation-part-1/index.html"
-    },
-    {
       "route": "/static-websites-with-azure-part-5",
       "rewrite": "/static-websites-with-azure-part-5/index.html"
     },
@@ -93,28 +77,32 @@
       "rewrite": "/hashicorp-vault-authenticate-and-authorize-azuread-users/index.html"
     },
     {
-      "route": "/use-multiple-public-ip-addresses-in-azure-vm",
-      "rewrite": "/use-multiple-public-ip-addresses-in-azure-vm/index.html"
-    },
-    {
       "route": "/azure-networking-hub-spoke-with-nva-and-azure-firewall",
       "rewrite": "/azure-networking-hub-spoke-with-nva-and-azure-firewall/index.html"
+    },
+    {
+      "route": "/use-multiple-public-ip-addresses-in-azure-vm",
+      "rewrite": "/use-multiple-public-ip-addresses-in-azure-vm/index.html"
     },
     {
       "route": "/link-shortener-service-with-azure-functions-and-powershell",
       "rewrite": "/link-shortener-service-with-azure-functions-and-powershell/index.html"
     },
     {
-      "route": "/solve-your-container-root-certificate-trust-issues-with-azure-container-registry-tasks",
-      "rewrite": "/solve-your-container-root-certificate-trust-issues-with-azure-container-registry-tasks/index.html"
+      "route": "/static-websites-with-azure-part-3",
+      "rewrite": "/static-websites-with-azure-part-3/index.html"
+    },
+    {
+      "route": "/automatically-generate-powershell-markdown-documentation-part-1",
+      "rewrite": "/automatically-generate-powershell-markdown-documentation-part-1/index.html"
     },
     {
       "route": "/getting-started-with-azure-static-web-apps",
       "rewrite": "/getting-started-with-azure-static-web-apps/index.html"
     },
     {
-      "route": "/static-websites-with-azure-part-3",
-      "rewrite": "/static-websites-with-azure-part-3/index.html"
+      "route": "/solve-your-container-root-certificate-trust-issues-with-azure-container-registry-tasks",
+      "rewrite": "/solve-your-container-root-certificate-trust-issues-with-azure-container-registry-tasks/index.html"
     },
     {
       "route": "/azure-sentinel-introduction",
@@ -125,12 +113,12 @@
       "rewrite": "/static-websites-with-azure-part-2/index.html"
     },
     {
-      "route": "/static-websites-with-azure-part-4",
-      "rewrite": "/static-websites-with-azure-part-4/index.html"
-    },
-    {
       "route": "/terraform-deployments",
       "rewrite": "/terraform-deployments/index.html"
+    },
+    {
+      "route": "/static-websites-with-azure-part-4",
+      "rewrite": "/static-websites-with-azure-part-4/index.html"
     },
     {
       "route": "/powershell-in-azure-functions-v2-is-generally-available",
@@ -149,12 +137,16 @@
       "rewrite": "/update-exchange-online-mailbox-language-settings/index.html"
     },
     {
-      "route": "/hashicorp-vault-raft-storage-snapshot-recovery",
-      "rewrite": "/hashicorp-vault-raft-storage-snapshot-recovery/index.html"
+      "route": "/aws-root-account-management-for-sso-using-azure-active-directory-part-3",
+      "rewrite": "/aws-root-account-management-for-sso-using-azure-active-directory-part-3/index.html"
     },
     {
       "route": "/powershell-7-overview",
       "rewrite": "/powershell-7-overview/index.html"
+    },
+    {
+      "route": "/hashicorp-vault-raft-storage-snapshot-recovery",
+      "rewrite": "/hashicorp-vault-raft-storage-snapshot-recovery/index.html"
     },
     {
       "route": "/load-powershell-assemblies-from-nuget-packages",
@@ -169,24 +161,24 @@
       "rewrite": "/cognitive-service-and-integration-in-office-365-form-recognizer/index.html"
     },
     {
-      "route": "/azure-ad-list-role-assignments",
-      "rewrite": "/azure-ad-list-role-assignments/index.html"
+      "route": "/azuread-admin-notification-and-mail-forwarding",
+      "rewrite": "/azuread-admin-notification-and-mail-forwarding/index.html"
     },
     {
       "route": "/terraform-create-blocks-dynamically-using-the-dynamic-block",
       "rewrite": "/terraform-create-blocks-dynamically-using-the-dynamic-block/index.html"
     },
     {
-      "route": "/import-excel-in-sharepoint-microsoft-365-lists",
-      "rewrite": "/import-excel-in-sharepoint-microsoft-365-lists/index.html"
+      "route": "/azure-ad-list-role-assignments",
+      "rewrite": "/azure-ad-list-role-assignments/index.html"
     },
     {
       "route": "/graph-api-remove-azure-ad-group-member",
       "rewrite": "/graph-api-remove-azure-ad-group-member/index.html"
     },
     {
-      "route": "/azuread-admin-notification-and-mail-forwarding",
-      "rewrite": "/azuread-admin-notification-and-mail-forwarding/index.html"
+      "route": "/import-excel-in-sharepoint-microsoft-365-lists",
+      "rewrite": "/import-excel-in-sharepoint-microsoft-365-lists/index.html"
     },
     {
       "route": "/post-azure-monitor-alerts-in-microsoft-teams-channel",
@@ -195,6 +187,10 @@
     {
       "route": "/template-chooser",
       "rewrite": "/template-chooser/index.html"
+    },
+    {
+      "route": "/office-365-tenant-to-tenant-migration-part1",
+      "rewrite": "/office-365-tenant-to-tenant-migration-part1/index.html"
     },
     {
       "route": "/powershell-saturday-hamburg-2020",
@@ -209,20 +205,8 @@
       "rewrite": "/power-automate-filtering-of-sharepoint-online-listen-odata-filter-query/index.html"
     },
     {
-      "route": "/office-365-tenant-to-tenant-migration-part1",
-      "rewrite": "/office-365-tenant-to-tenant-migration-part1/index.html"
-    },
-    {
       "route": "/tenant-migration-quest-on-demand",
       "rewrite": "/tenant-migration-quest-on-demand/index.html"
-    },
-    {
-      "route": "/findtime-meeting-poll",
-      "rewrite": "/findtime-meeting-poll/index.html"
-    },
-    {
-      "route": "/default-language-office-365-tenant",
-      "rewrite": "/default-language-office-365-tenant/index.html"
     },
     {
       "route": "/intune-microsoft-store-for-business-integration",
@@ -237,8 +221,24 @@
       "rewrite": "/start-stop-aks-adx/index.html"
     },
     {
+      "route": "/findtime-meeting-poll",
+      "rewrite": "/findtime-meeting-poll/index.html"
+    },
+    {
+      "route": "/default-language-office-365-tenant",
+      "rewrite": "/default-language-office-365-tenant/index.html"
+    },
+    {
+      "route": "/aws-root-account-management-for-sso-using-azure-active-directory-part-1",
+      "rewrite": "/aws-root-account-management-for-sso-using-azure-active-directory-part-1/index.html"
+    },
+    {
       "route": "/terraform-ecosystem-pipelines",
       "rewrite": "/terraform-ecosystem-pipelines/index.html"
+    },
+    {
+      "route": "/aws-root-account-management-for-sso-using-azure-active-directory-part-2",
+      "rewrite": "/aws-root-account-management-for-sso-using-azure-active-directory-part-2/index.html"
     },
     {
       "route": "/page/6",
@@ -257,12 +257,12 @@
       "rewrite": "/page/5/index.html"
     },
     {
-      "route": "/page/7",
-      "rewrite": "/page/7/index.html"
-    },
-    {
       "route": "/page/3",
       "rewrite": "/page/3/index.html"
+    },
+    {
+      "route": "/page/7",
+      "rewrite": "/page/7/index.html"
     },
     {
       "route": "/",

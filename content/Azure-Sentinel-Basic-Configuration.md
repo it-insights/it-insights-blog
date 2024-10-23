@@ -21,10 +21,10 @@ This article will provide an introduction into the basics of Azure Sentinel. As 
 
 This post is a part of our Azure Sentinel series. The following posts are also part of this series:
 
-* [Azure Sentinel Introduction](/Azure-Sentinel-Introduction/)
-* [Azure Sentinel Basic Configuration](/Azure-Sentinel-Basic-Configuration/)
-* [Azure Sentinel How to use sigma rules](Use-sigma-rules-in-Azure-Sentinel/)
-* [Azure Sentinel Threat Hunting (Coming soon)](/Azure-Sentinel-Threat-Hunting/)
+* [Azure Sentinel Introduction](/Azure-Sentinel-Introduction)
+* [Azure Sentinel Basic Configuration](/Azure-Sentinel-Basic-Configuration)
+* [Azure Sentinel How to use sigma rules](/Use-sigma-rules-in-Azure-Sentinel)
+* [Azure Sentinel Threat Hunting (Coming soon)](/Azure-Sentinel-Threat-Hunting)
 
 <!-- toc -->
 
@@ -82,7 +82,7 @@ The "Hunting" pane in Azure Sentinel provides the ability to execute Queries, as
 All hunting queries can be classified by one or more tactics based on the MITRE ATT&CK framework. They can also be filtered by data source and the provider, who has created the query (currently custom or Microsoft).
 To save results from a threat hunting session there is now the possibility to save a query including the results and optional annotations as a "Hunting Bookmark".
 {% alert info %}
-To find out which features changed and were added from Preview to General Availability, read our [Azure Sentinel Introduction post](/Azure-Sentinel-Introduction/).
+To find out which features changed and were added from Preview to General Availability, read our [Azure Sentinel Introduction post](/Azure-Sentinel-Introduction).
 {% endalert %}
 As this is one of the most important parts of Azure Sentinel, we will cover Threat Hunting and how it is done in the next part.
 

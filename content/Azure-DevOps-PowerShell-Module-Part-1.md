@@ -15,7 +15,7 @@ category:
 If you are like me - at least in terms of lazyness - you automate the stuff that you face more than once. Recently, I came accross the reoccuring task of creating Azure DevOps projects with several teams over and over again.
 <!-- more -->
 
-* [Part 1 - Introduction](/azure-devops-powershell-module-part-1/)
+* [Part 1 - Introduction](/azure-devops-powershell-module-part-1)
 
 This is the first post of many other posts to come and I would really appreciate some feedback!
 

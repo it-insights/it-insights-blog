@@ -21,9 +21,9 @@ If you have worked with the sigma specification or tool that implement it in the
 
 This post is a part of our Azure Sentinel series. The following posts are also part of this series:
 
-* [Azure Sentinel Introduction](/Azure-Sentinel-Introduction/)
-* [Azure Sentinel Basic Configuration](/Azure-Sentinel-Basic-Configuration/)
-* [Azure Sentinel How to use sigma rules](use-sigma-rules-in-azure-sentinel/)
-* [Azure Sentinel Threat Hunting (Coming soon)](/Azure-Sentinel-Threat-Hunting/)
+* [Azure Sentinel Introduction](/Azure-Sentinel-Introduction)
+* [Azure Sentinel Basic Configuration](/Azure-Sentinel-Basic-Configuration)
+* [Azure Sentinel How to use sigma rules](use-sigma-rules-in-azure-sentinel)
+* [Azure Sentinel Threat Hunting (Coming soon)](/Azure-Sentinel-Threat-Hunting)
 
 <!-- toc -->

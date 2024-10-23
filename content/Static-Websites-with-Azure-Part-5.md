@@ -32,10 +32,10 @@ Learn how to redirect custom domain traffic for HTTP and HTTPS (with free valid 
 
 This is a multi part article with the following parts:
 
-* [Part 1 - Static site generators](/static-websites-with-azure-part-1/)
-* [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2/)
-* [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3/)
-* [Part 4 - Configure Azure CDN for static websites](/static-websites-with-azure-part-4/)
+* [Part 1 - Static site generators](/static-websites-with-azure-part-1)
+* [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2)
+* [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3)
+* [Part 4 - Configure Azure CDN for static websites](/static-websites-with-azure-part-4)
 * Part 5 - Configure Azure Function App for root domain redirection (You are here)
 
 In this part we will implement an Azure Function to redirect traffic from the root of our staticwebsite.de domain to the `www.staticwebsite.de` domain. Then we will use Azure Function proxies and the Let's Encrypt extension in combination with a PowerShell function to get a free SSL certificate.
@@ -44,7 +44,7 @@ In this part we will implement an Azure Function to redirect traffic from the ro
 
 ## Introduction
 
-As explained in [part 4](/static-websites-with-azure-part-4/), it is currently not possible to add root domains like `staticwebsite.de` as a custom domain to Azure CDN. So we need a way to forward traffic to the www subdomain and still provide SSL support to satisfy the requirements for hsts preloading.
+As explained in [part 4](/static-websites-with-azure-part-4), it is currently not possible to add root domains like `staticwebsite.de` as a custom domain to Azure CDN. So we need a way to forward traffic to the www subdomain and still provide SSL support to satisfy the requirements for hsts preloading.
 I had the following ideas:
 
 * Use the rule engine of Azure CDN in Verizon Premium tier to send 301 replies - *Does not work, as there is currently no way to add root domains to Azure CDN. None of the known workarounds work anymore.*
@@ -88,7 +88,7 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 
 ### Map custom domain
 
-Regarding to the documentation, it is necessary to add a CNAME for our custom domain. As explained in [part 3](/static-websites-with-azure-part-3/), this is not possible for root domain (it's why we are doing this in the first place :wink:), but with a little trickery we can use another validation method to add our custom domain. If we add our custom domain, the function app IP is shown in the portal. We have to create a A record for `@` pointing to this IP. After clicking validate, the portal will tell us that only CNAME is supported for custom domain validation, but will show us the necessary TXT record, if we choose TXT based validation from the dropdown.
+Regarding to the documentation, it is necessary to add a CNAME for our custom domain. As explained in [part 3](/static-websites-with-azure-part-3), this is not possible for root domain (it's why we are doing this in the first place :wink:), but with a little trickery we can use another validation method to add our custom domain. If we add our custom domain, the function app IP is shown in the portal. We have to create a A record for `@` pointing to this IP. After clicking validate, the portal will tell us that only CNAME is supported for custom domain validation, but will show us the necessary TXT record, if we choose TXT based validation from the dropdown.
 
 DNS entry | type | value
 ---|---|---

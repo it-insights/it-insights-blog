@@ -20,10 +20,10 @@ This blog series explains what static site generators are, why we have chosen a 
 This is a multi part article with the following parts:
 
 * Part 1 - Static site generators (You are here)
-* [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2/)
-* [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3/)
-* [Part 4 - Configure Azure CDN for static websites](/static-websites-with-azure-part-4/)
-* [Part 5 - Configure Azure Function App for root domain redirection](/static-websites-with-azure-part-5/)
+* [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2)
+* [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3)
+* [Part 4 - Configure Azure CDN for static websites](/static-websites-with-azure-part-4)
+* [Part 5 - Configure Azure Function App for root domain redirection](/static-websites-with-azure-part-5)
 
 ## Static site generators
 
