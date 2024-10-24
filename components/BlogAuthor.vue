@@ -38,9 +38,9 @@ const socialLinks = computed(() => [
       </div>
       <div class="flex flex-col gap-2">
         <span class="font-bold">
-          {{ author.company.position }}
+          {{ author.company.position || '' }}
           <NuxtLink :to="author.company.url" class="ml-1">
-            @{{ author.company.name }}
+            @{{ author.company.name || '' }}
           </NuxtLink>
         </span>
         <UPageLinks :links="socialLinks as PageLink[]" class="mb-2" :ui="{ inactive: 'border-0' }" />
