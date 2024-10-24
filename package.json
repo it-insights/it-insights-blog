@@ -36,8 +36,6 @@
     "eslint-plugin-package-json": "^0.15.4",
     "eslint-plugin-tailwindcss": "^3.17.5",
     "lefthook": "^1.8.1",
-    "markdownlint": "^0.35.0",
-    "markdownlint-cli": "^0.42.0",
     "unist-util-visit": "^5.0.0"
   }
 }

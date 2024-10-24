@@ -20,11 +20,7 @@ When you plan on using Azure-Firewall in your Network-Infrastructure, you have t
 
 ## The Scenario
 
-::blog-image
----
-alt: Architecture Overview
-src: posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/Overview.png
----
+::blog-image{alt="Architecture Overview" src="posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/Overview.png"}
 ::
 
 In this scenario, we have a Hub-Spoke VNet structure. The Hub-Vnet (Core) is the central point where everything connects. Because we don’t have any capable devices, we cannot use BGP.
@@ -58,11 +54,7 @@ In this post I will focus on the Azure-Firewall portion - particularly the Routi
 
 If you are not familiar with Routing in Azure VNets, I recommend to read this [MS Docs Article](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview) first.
 
-::blog-image
----
-alt: Detailed View
-src: posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/Overview_Detail.png
----
+::blog-image{alt="Detailed View" src="posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/Overview_Detail.png"}
 ::
 
 The image above shows a more detailed view with the On-Premises part, as well as the Hub-VNet (Core) and one stage (Dev) set up as the Spoke-VNets.
@@ -99,7 +91,6 @@ Below is a traceroute from Az1 (10.0.21.25) to Az2 (10.1.21.25).
 ```text
 traceroute to 10.1.21.25 (10.1.21.25), 30 hops max, 60 byte packets
  1  10.1.21.25 (10.1.21.25)  2.323 ms !X  2.213 ms !X  2.131 ms !X
-
 ```
 
 #### Hub-Spoke-Peering
@@ -132,11 +123,7 @@ UDRs enable us to overwrite system routes. In this case, we need to create a UDR
 
 #### NVA UDR
 
-::blog-image
----
-alt: NVA Subnet UDR
-src: posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/nva_udr.png
----
+::blog-image{alt="NVA Subnet UDR" src="posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/nva_udr.png"}
 ::
 
 You may ask, why don't we just add the entire range (10.1.20.0/23) of the Dev-stage to the route insted of adding each VNet individually - the answer is the algorithm Azure uses to determine the route to take. The [_longest prefix match algorithm_](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview#how-azure-selects-a-route).
@@ -145,22 +132,14 @@ Since all Spoke-VNets are peered, the routing table alrady contains a route to o
 
 #### Spoke-VNet UDR
 
-::blog-image
----
-alt: Spoke Subnet UDR
-src: posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/spoke_udr.png
----
+::blog-image{alt="Spoke Subnet UDR" src="posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/spoke_udr.png"}
 ::
 
 This UDR sets the Azure Firewall as default route. As the implicit learned VNET peering routes have a longer prefix, the traffic between Dev 1 and Dev 2 still flows directly. This avoids unnecessary costs on the Azure Firewall, as well as peering traffic costs.
 
 #### Firewall UDR
 
-::blog-image
----
-alt: Firewall Subnet UDR
-src: posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/fw_udr.png
----
+::blog-image{alt="Firewall Subnet UDR" src="posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/fw_udr.png"}
 ::
 
 The UDR added to the AzureFirewallSubnet contains all Routes that need to be forwarded to the NVA. In this case one on-premises network that is available over the S2S VPN, established on the NVA.
@@ -170,22 +149,17 @@ The ip-ranges, needed to route traffic between stages, are learned implicitly fr
 
 For now, lets just set the Azure-Firewall to allow basic traffic without much restrictions.
 
-::blog-image
----
-alt: basic Firewall ruleset
-src: posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/fw_any-any.png
----
+::blog-image{alt="basic Firewall ruleset" src="posts/azure-networking-hub-spoke-with-nva-and-azure-firewall/fw_any-any.png"}
 ::
 
 ```bash
- ...
- PING 10.1.21.25 (10.1.21.25) 56(84) bytes of data.
- 64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=11.0 ms
- 64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=10.9 ms
- 64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=11.4 ms
- 64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=10.2 ms
- ...
-
+...
+PING 10.1.21.25 (10.1.21.25) 56(84) bytes of data.
+64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=11.0 ms
+64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=10.9 ms
+64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=11.4 ms
+64 bytes from 10.1.21.25: icmp_seq=1 ttl=120 time=10.2 ms
+...
 ```
 
 In the next post we will take a look at the code needed to deploy this in your own subscription. Then you can play around and change this to your desired design.

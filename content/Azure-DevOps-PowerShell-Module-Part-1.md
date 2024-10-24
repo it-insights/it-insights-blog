@@ -57,7 +57,7 @@ The module does by far not have the final scope yet. It currently only covers ve
 
 #### Connect
 
-To connect to your Azure DevOps organization, you have to create a personal access token first. Open this [link](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts) and follow the instructions. Afterwards, you can save both, the token as well as the name of your Azure DevOps organization as a string to a variable -  then you can connect:
+To connect to your Azure DevOps organization, you have to create a personal access token first. Open this [link](https://docs.microsoft.com/en-us/azure/devops/organizations/accounts/use-personal-access-tokens-to-authenticate?view=vsts) and follow the instructions. Afterwards, you can save both, the token as well as the name of your Azure DevOps organization as a string to a variable - then you can connect:
 
 ```powershell
 $token = "token"

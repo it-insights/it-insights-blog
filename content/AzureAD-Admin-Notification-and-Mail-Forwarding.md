@@ -27,29 +27,17 @@ The following example shows the functionality and configuration of the feature.
 
 Our IT employee Alex Wilber "<AlexW@M365x57.OnMicrosoft.com>" has a user account in the company with a corresponding Microsoft 365 license and a mailbox.
 
-::blog-image
----
-alt: Azure AD User Settings
-src: posts/azuread-admin-notification-and-mail-forwarding/20220919195600.png
----
+::blog-image{alt="Azure AD User Settings" src="posts/azuread-admin-notification-and-mail-forwarding/20220919195600.png"}
 ::
 
 Furthermore our IT employee Alex Wilber has another Azure AD Admin Account "<adm.AlexW@m365x57487439.onmicrosoft.com>".
 
-::blog-image
----
-alt: Azure AD User Settings
-src: posts/azuread-admin-notification-and-mail-forwarding/20220919195903.png
----
+::blog-image{alt="Azure AD User Settings" src="posts/azuread-admin-notification-and-mail-forwarding/20220919195903.png"}
 ::
 
 This admin user "adm.AlexW\@m365x57487439" has no licenses assigned as described, so no mailbox is provided. Also, in this example, the "Global Administrator" role was assigned to the user via PIM.
 
-::blog-image
----
-alt: PIM Configuration
-src: posts/azuread-admin-notification-and-mail-forwarding/20220919200143.png
----
+::blog-image{alt="PIM Configuration" src="posts/azuread-admin-notification-and-mail-forwarding/20220919200143.png"}
 ::
 
 ### Configuration Notification forwarding - Plus addresses
@@ -62,21 +50,13 @@ At this point the email format plus addresses is used. Extend your email address
 
 Email Admin Account: "<AlexW+ADM@M365x57487439.OnMicrosoft.com>"
 
-::blog-image
----
-alt: Azure AD User Settings
-src: posts/azuread-admin-notification-and-mail-forwarding/20220919200941.png
----
+::blog-image{alt"Azure AD User Settings" src"posts/azuread-admin-notification-and-mail-forwarding/20220919200941.png"}
 ::
 
 Exchange Online resolves the email address "<AlexW+ADM@M365x57487439.OnMicrosoft.com>" without the "+" and associated tag ("+ADM") so that the notification is sent to <AlexW@M365x57487439.OnMicrosoft.com>.
 If we then enable the PIM role Global Administrator of the admin account "<adm.AlexW@m365x57487439.onmicrosoft.com>", we will receive the notification in our user mailbox.
 
-::blog-image
----
-alt: PIM Notification
-src: posts/azuread-admin-notification-and-mail-forwarding/20220919203118.png
----
+::blog-image{alt="PIM Notification" src="posts/azuread-admin-notification-and-mail-forwarding/20220919203118.png"}
 ::
 
 In the past, it was possible for email addresses to contain "+" characters. But Microsoft has enabled plus addressing by default in all Exchange Online organization at the beginning of 2022.
