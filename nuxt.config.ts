@@ -50,6 +50,11 @@ export default defineNuxtConfig({
   icon: {
     collections: ['simple-icons', 'carbon', 'heroicons', 'vscode-icons'],
     clientBundle: {
+      icons: [
+        'heroicons:clipboard-document',
+        'heroicons:sun',
+        'heroicons:moon',
+      ],
       scan: true,
     },
     serverBundle: {
@@ -102,7 +107,7 @@ export default defineNuxtConfig({
     },
   },
   delayHydration: {
-    mode: 'init'
+    mode: 'init',
   },
 
   // Nitro

@@ -21,10 +21,10 @@ This article will provide an introduction into the basics of Azure Sentinel. As 
 
 This post is a part of our Azure Sentinel series. The following posts are also part of this series:
 
-* [Azure Sentinel Introduction](/Azure-Sentinel-Introduction)
-* [Azure Sentinel Basic Configuration](/Azure-Sentinel-Basic-Configuration)
-* [Azure Sentinel How to use sigma rules](/Use-sigma-rules-in-Azure-Sentinel)
-* [Azure Sentinel Threat Hunting (Coming soon)](/Azure-Sentinel-Threat-Hunting)
+- [Azure Sentinel Introduction](/Azure-Sentinel-Introduction)
+- [Azure Sentinel Basic Configuration](/Azure-Sentinel-Basic-Configuration)
+- [Azure Sentinel How to use sigma rules](/Use-sigma-rules-in-Azure-Sentinel)
+- [Azure Sentinel Threat Hunting (Coming soon)](/Azure-Sentinel-Threat-Hunting)
 
 <!-- toc -->
 
@@ -33,38 +33,40 @@ This post is a part of our Azure Sentinel series. The following posts are also p
 The first thing we will do is onboard a Azure Virtual Machine (VM), make some event adjustments and connect some basic Azure services to Azure Sentinel.
 As Azure Sentinel is basically a Log Analytics solution, we need to add a virtual machine in the Log Analytics panel. The following gif shows the VM onboarding process:
 
-{% image fancybox OnBoardVm.gif "VM Onboarding" %}
+::blog-image{alt="VM Onboarding" src="posts/azure-sentinel-basic-configuration/OnBoardVm.gif"}
+::
 
 Now we should already see a few Heartbeat events in our Azure Sentinel dashboard:
 
-{% image fancybox OnboardingEvents.png "Heartbeat events in Azure Sentinel" %}
+::blog-image{alt="Heartbeat events in Azure Sentinel" src="posts/azure-sentinel-basic-configuration/OnboardingEvents.png"}
+::
 
 ### EventLog vs. Security Events
 
 The next thing we do is configuring the eventlog forwarding. This is a litle bit more complicated as the settings for eventlog forwarding are split into two places.
 
-* Security Events: ASC/Azure Sentinel Connector
-* Other Windows Events: Log Analytics Workspace settings
+- Security Events: ASC/Azure Sentinel Connector
+- Other Windows Events: Log Analytics Workspace settings
 
 To configure Security Events directly from Azure Sentinel, click on the
-  Sysmon
+Sysmon
 
 ### Azure Services
 
 Finally we will connect some Azure services:
 
-* Azure Activity
-* Azure Security Center (ASC)
-* Threat Intelligence Platforms
-* CEF
+- Azure Activity
+- Azure Security Center (ASC)
+- Threat Intelligence Platforms
+- CEF
 
 ## Incidents
 
 The incidents pane is the one you will probably use the most besides the hunting pane. The following picture shows an overview of the
 Incident 513 from cim2019 workspace
 tagging, comments, assignments
-  manual
-  automatic (Playbook)
+manual
+automatic (Playbook)
 
 ## Workbooks
 
@@ -90,17 +92,17 @@ As this is one of the most important parts of Azure Sentinel, we will cover Thre
 
 MITRE ATT&CK
 Rules
-  Scheduled query rule
-    Severity
-    Entity mapping
-    Query scheduling
-    Alert threshold
-    Automated response
-    Example
-  Microsoft incident creation rule
-    MS Security service
-    Severity filter
-    Name filter
+Scheduled query rule
+Severity
+Entity mapping
+Query scheduling
+Alert threshold
+Automated response
+Example
+Microsoft incident creation rule
+MS Security service
+Severity filter
+Name filter
 Rule templates
 
 ## Playbooks

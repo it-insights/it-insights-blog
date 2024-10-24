@@ -50,11 +50,7 @@ Examples for common SIEM systems are:
 At least for the response part, we can use a SOAR. In addition to a SIEM, a SOAR provides response and orchestration capabilities often in the form of multiple playbooks and integrations into other security tools. As the amount of data collected is continuously increasing, a SOAR enables the security analysts to focus on their core skills and let the orchestration do the initial analysis, handle audit trail, etc..
 You might remember Microsoft's 2017 acquisition of Hexadite, a company specialized in automated incident response. The results of the integration of Hexadite into the Microsoft product portfolio can be seen in Microsoft Defender ATP automated investigations available for Windows 10 from 1709 on.
 
-::blog-image
----
-alt: 'Microsoft Defender ATP automated investigation (Source: Microsoft)'
-src: https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/images/atp-analyze-auto-ir.png
----
+::blog-image{alt="Microsoft Defender ATP automated investigation (Source: Microsoft)" src="https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/images/atp-analyze-auto-ir.png"}
 ::
 
 But Microsoft hasn't stop there and they have added some of the capabilities to the Azure Security Center (ASC) and with the addition of Machine Learning also to Azure Sentinel. We will cover the details in Part 2 of this series.
@@ -73,19 +69,19 @@ In summary, SIEM and SOAR (which can be provided by the same product) are 2 esse
 The Azure Sentinel Preview was initially launched in February 2019 and introduced us to Microsoft's take on the SIEM market. Lets take a look at the current features and what has changed with **GA**:
 
 - Data collection through an increasing number of connectors with the most important being **(GA: New connectors and many out of preview)*** CEF (Common event format)
-  * Popular third party network solutions like Palo Alto, F5, Fortinet, Check Point, etc.
-  * Cloud Services (AWS, Azure, etc.)
-  * Eventlogs
-  * Syslog
-  * [Microsoft Threat intelligence](https://docs.microsoft.com/en-us/graph/api/resources/security-api-overview?view=graph-rest-beta#threat-indicators-preview) connector **(GA: Now utilized by workbooks and hunting queries)**
+  - Popular third party network solutions like Palo Alto, F5, Fortinet, Check Point, etc.
+  - Cloud Services (AWS, Azure, etc.)
+  - Eventlogs
+  - Syslog
+  - [Microsoft Threat intelligence](https://docs.microsoft.com/en-us/graph/api/resources/security-api-overview?view=graph-rest-beta#threat-indicators-preview) connector **(GA: Now utilized by workbooks and hunting queries)**
 - Dashboarding with Azure Workbooks **(GA: Azure Dashboards replaced by Workbooks)**
 - Analytics based on Kusto queries **(GA: Separated into "Scheduled query rule" and "Microsoft incident creation rule" + rule templates built-in)**
 - Incident management **(GA: support for tagging, comments, and assignments automation)**
 - Incident investigation with investigation graph and automated entity mapping **(GA: Investigation graph out of preview)**
 - Automated incident response based on Log Analytics Playbooks
 - Threat Hunting capabilities **(GA: More out of the box queries)*** with custom Kusto queries classified by [MITRE ATT\&CK framework](https://attack.mitre.org/)
-  * with Azure Notebooks based hunting notebooks **(GA: More notebooks)**
-  * Hunting Bookmarks **(GA)**
+  - with Azure Notebooks based hunting notebooks **(GA: More notebooks)**
+  - Hunting Bookmarks **(GA)**
 - Machine learning based SecOps with [Fusion](https://azure.microsoft.com/en-us/blog/reducing-security-alert-fatigue-using-machine-learning-in-azure-sentinel/) **(GA: Now enabled by default and configurable in the UI)**
 - Azure RBAC Support **(GA)**
 - Management API **(GA)**
@@ -118,18 +114,10 @@ The official reference can be found at <http://aka.ms/kdocs>.
 Azure Workbooks is the new way of dashboarding in Azure. First introduced in Azure Monitor, Azure Workbooks will replace the classic Azure Dashboards throughout the Azure platform. Azure Workbooks are much more flexible due to it's Kusto base queries combined with Markdown/HTML based theming. This provides interactivity like drilldown and selection and filtering for specific objects directly in the dashboard view.
 Here is an example of the basic performance workbook and it's edit view with Markdown and the underlying Kusto queries:
 
-::blog-image
----
-alt: Performance workbook dashboard view
-src: posts/azure-sentinel-introduction/Workbooks01.JPG
----
+::blog-image{alt="Performance workbook dashboard view" src="posts/azure-sentinel-introduction/Workbooks01.JPG"}
 ::
 
-::blog-image
----
-alt: Performance workbook edit view
-src: posts/azure-sentinel-introduction/Workbooks02.JPG
----
+::blog-image{alt="Performance workbook edit view" src="posts/azure-sentinel-introduction/Workbooks02.JPG"}
 ::
 
 ### Azure Notebooks
@@ -143,11 +131,7 @@ src: posts/azure-sentinel-introduction/Workbooks02.JPG
 
 To get started with Azure Notebooks, just create a new project from the Jupyter github repo and try around with some basic examples.
 
-::blog-video
----
-alt: Azure Notebooks import Jupyter examples
-src: posts/azure-sentinel-introduction/Azure_Notebooks.gif
----
+::blog-video{alt="Azure Notebooks import Jupyter examples" src="posts/azure-sentinel-introduction/Azure_Notebooks.gif"}
 ::
 
 ## Azure Sentinel quickstart
@@ -172,7 +156,6 @@ Sku               : pergb2018
 CustomerId        : f5abc23f-1e95-4cdb-aad9-1e02ec036a46
 PortalUrl         :
 ProvisioningState : Succeeded
-
 ```
 
 Next we need to deploy the solution using the following PowerShell commands (don't forget to replace `{subscriptionId}` in the body object):
@@ -215,7 +198,6 @@ name       : SecurityInsights(itinsightssentinel)
 type       : Microsoft.OperationsManagement/solutions
 location   : West Europe
 }
-
 ```
 
 ::callout{color="amber" icon="i-heroicons-exclamation-triangle"}
@@ -226,18 +208,10 @@ The above method is completely undocumented and was just achieved due to some re
 
 You can find it in the Azure portal by searching for Sentinel and clicking on the Azure Sentinel workspace, we just created.
 
-::blog-image
----
-alt: Sentinel workspaces overview
-src: posts/azure-sentinel-introduction/SentinelWorkspace01.JPG
----
+::blog-image{alt="Sentinel workspaces overview" src="posts/azure-sentinel-introduction/SentinelWorkspace01.JPG"}
 ::
 
-::blog-image
----
-alt: Sentinel workspace
-src: posts/azure-sentinel-introduction/SentinelWorkspace02.JPG
----
+::blog-image{alt="Sentinel workspace" src="posts/azure-sentinel-introduction/SentinelWorkspace02.JPG"}
 ::
 
 ## Summary

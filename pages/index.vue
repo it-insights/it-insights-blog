@@ -5,14 +5,13 @@ const page = ref(Number.parseInt(route.params.page as string) || 1)
 const limit = ref(7)
 const skip = computed(() => (page.value - 1) * limit.value)
 const count = await queryContent().count()
-const { data: posts } = await useAsyncData('index-posts', () => queryContent()
+const { data: indexPosts } = await useAsyncData('index-posts', () => queryContent()
   .where({ _extension: 'md', author: { $ne: 'itinsights' } })
   .sort({ date: -1 })
   .skip(skip.value)
   .limit(limit.value)
-  .find(), {
-  watch: [page],
-})
+  .find(),
+)
 
 // SEO
 useSeoMeta({
@@ -47,14 +46,14 @@ const links = [{
     </template>
     <UBlogList orientation="horizontal" :ui="{ wrapper: 'lg:grid-cols-4' }">
       <UBlogPost
-        v-for="(post, index) in posts"
+        v-for="(post, index) in indexPosts"
         :key="index"
         :to="post._path"
         :title="post.title"
         :description="post.description"
         :image="post.image ? { src: post.image, alt: post.title } : { src: '/img/post_placeholder.jpg', alt: post.title }"
         :date="post.date ? new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) : new Date()"
-        :authors="[{ name: post.author || '', alt: post.author || '', avatar: { src: ['Jacob Meissner', 'Jan-Henrik Damaschke', 'Christoph Burmeister'].includes(post.author) ? `/img/${post.author.replace(' ', '-').toLowerCase().concat('', '-avatar.jpg')}` : undefined }, to: `/authors/${post.author.replace(' ', '-').toLowerCase()}` }]"
+        :authors="[{ name: post.author || '', avatar: { alt: post.author || '', src: ['Jacob Meissner', 'Jan-Henrik Damaschke', 'Christoph Burmeister'].includes(post.author) ? `/img/${post.author.replace(' ', '-').toLowerCase().concat('', '-avatar.jpg')}` : undefined }, to: `/authors/${post.author.replace(' ', '-').toLowerCase()}` }]"
         :badge="{ label: Array.isArray(post.category) ? post.category.join(', ') : post.category.replace(',', ', ') }"
         orientation="vertical"
         :class="index === 0 ? 'col-span-full' : 'col-span-2'"
