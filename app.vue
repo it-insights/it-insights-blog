@@ -19,11 +19,7 @@ const headerLinks = [{
   icon: 'i-heroicons-rocket-launch',
   to: 'https://github.com/it-insights/Talks',
   target: '_blank',
-}]
-
-const footerLinks = [{
-  label: 'Talks',
-  to: 'https://github.com/it-insights/Talks',
+  alt: 'IT Insights GitHub',
 }]
 
 provide('navigation', navigation)
@@ -93,7 +89,7 @@ useSeoMeta({
     <NuxtPage />
   </UMain>
 
-  <UFooter :links="footerLinks">
+  <UFooter>
     <template #left>
       Copyright © {{ new Date().getFullYear() }}
     </template>
@@ -105,6 +101,7 @@ useSeoMeta({
         variant="ghost"
         to="https://x.com/itinsights_"
         target="_blank"
+        alt="X account"
       />
       <UButton
         icon="i-simple-icons-discord"
@@ -112,6 +109,7 @@ useSeoMeta({
         variant="ghost"
         to="https://discord.gg/QakdtpQW"
         target="_blank"
+        alt="Discord invitation"
       />
       <UButton
         icon="i-simple-icons-github"
@@ -119,6 +117,7 @@ useSeoMeta({
         variant="ghost"
         to="https://github.com/itinsights"
         target="_blank"
+        alt="IT Insights GitHub"
       />
     </template>
   </UFooter>

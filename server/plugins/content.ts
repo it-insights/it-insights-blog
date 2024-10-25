@@ -2,13 +2,21 @@ import { ofetch } from 'ofetch'
 import { parseFilename } from 'ufo'
 import { visit } from 'unist-util-visit'
 
-// Set default image to first image in post
 export default defineNitroPlugin((nitroApp) => {
+  // Set default image to first image in post
   nitroApp.hooks.hook('content:file:afterParse', (file) => {
     if (file._id.endsWith('.md') && !file.image) {
       visit(file.body, (n: any) => n.tag === 'blog-image', (node) => {
-        file.image = node.props.src
+        file.image ??= node.props.src
       })
+    }
+  })
+
+  // Set tags as head keywords
+  nitroApp.hooks.hook('content:file:afterParse', (file) => {
+    if (file._id.endsWith('.md') && file.tags) {
+      !file.head && (file.head = {})
+      file.head.meta ??= [{ name: 'keywords', content: file.tags.join() }]
     }
   })
 })

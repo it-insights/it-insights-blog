@@ -46,12 +46,8 @@ export default defineNuxtConfig({
     },
   },
   icon: {
-    collections: ['simple-icons', 'carbon', 'heroicons', 'vscode-icons'],
     clientBundle: {
       scan: true,
-    },
-    serverBundle: {
-      collections: ['simple-icons', 'carbon', 'heroicons', 'vscode-icons'],
     },
   },
   fonts: {
@@ -62,6 +58,26 @@ export default defineNuxtConfig({
       google: false,
     },
   },
+  image: {
+    format: ['webp'],
+    presets: {
+      blogList: {
+        modifiers: {
+          format: 'webp',
+          width: 500,
+          height: 250,
+        },
+      },
+      blogLead: {
+        modifiers: {
+          format: 'webp',
+          width: 900,
+          height: 450,
+        },
+      },
+    },
+  },
+
   // Analytics
   $production: {
     scripts: {
@@ -98,6 +114,9 @@ export default defineNuxtConfig({
         ],
       },
     },
+  },
+  schemaOrg: {
+    enabled: false,
   },
 
   // Nitro

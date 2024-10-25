@@ -27,6 +27,7 @@ defineOgImage({
   title: page.value.title,
   description: page.value.description,
 })
+useContentHead(page)
 </script>
 
 <template>
@@ -60,7 +61,7 @@ defineOgImage({
               :title="post.title"
               :description="post.description"
               :date="post.date ? new Date(post.date).toLocaleDateString('en', { year: 'numeric', month: 'short', day: 'numeric' }) : new Date()"
-              :authors="[{ name: post.author || '', alt: post.author || '' }]"
+              :authors="[{ name: post.author || '', avatar: { alt: post.author || '', src: ['Jacob Meissner', 'Jan-Henrik Damaschke', 'Christoph Burmeister'].includes(post.author) ? `/img/${post.author.replace(' ', '-').toLowerCase().concat('', '-avatar.jpg')}` : undefined }, to: `/authors/${post.author.replace(' ', '-').toLowerCase()}` }]"
               :badge="{ label: Array.isArray(post.category) ? post.category.join(', ') : post.category.replace(',', ', ') }"
               orientation="vertical"
               :ui="{
