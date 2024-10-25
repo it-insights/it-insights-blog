@@ -13,6 +13,7 @@ date: 2019-07-08 07:30:00
 ---
 
 If you are working with PowerShell frequently, you will often run into the question of logging. How do I want to write logs, where to write them and which format should they have. We wont go into these questions here, however, we will take a look at how to implement PowerShell logging in a non-blocking (async) way.
+
 <!-- more -->
 <!-- toc -->
 
@@ -39,7 +40,7 @@ function global:WriteLog
         [Parameter(Mandatory=$true)]
         [string]$message
     )
-    
+
     $logMessage = "$([Datetime]::UtcNow) ($type): $message"
     Write-Output $logMessage
     Add-content -Path "C:\temp\test.log" -Value $logMessage
@@ -134,7 +135,7 @@ $null = $cmd.BeginInvoke()
 ```
 
 We set the `ThreadOptions` on the runspace object to `ReuseThread`.
-According to the [PSThreadOptions Enum](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.runspaces.psthreadoptions?view=pscore-6.2.0), `ReuseThread` defines that the runspace *"Creates a new thread for the first invocation and then re-uses that thread in subsequent invocations."*.
+According to the [PSThreadOptions Enum](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.runspaces.psthreadoptions?view=pscore-6.2.0), `ReuseThread` defines that the runspace _"Creates a new thread for the first invocation and then re-uses that thread in subsequent invocations."_.
 Then we open the runspace synchronously by calling `Open()` to be able to interact with it.
 Now we can use a neat property called `SessionStateProxy` to add objects that we want to use for communication.
 It basically declares and initializes variables in the remote runspace, in our case we want the `logEntries` and the `logLocation` variables to be accessible from the runspace scope.
@@ -162,7 +163,7 @@ $psLogger.Alert("Test Alert")
 
 Here, we create an instance of the PsLogger class and write some logs to the "C:\temp" folder.
 
-``````powershell
+````powershell
 . 'c:\temp\PSLogger.ps1'
 $logger = [PSLogger]::new("C:\temp")
 $logger.Alert("Async logging is awesome")
@@ -179,3 +180,4 @@ Now lets take a look at the output file.
 ```
 
 And thats it! You can now extend and rewrite the logging class for your needs and don't forget to check in frequently for my next post about logging into Azure append blobs :smiley:
+````

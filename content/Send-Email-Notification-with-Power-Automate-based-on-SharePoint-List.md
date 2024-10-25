@@ -42,24 +42,28 @@ To realize this, some intermediate steps are necessary by selecting the email ad
 2. If we run the flow and have a look at the ouput, our "Responsible" field will look like the picture below. In the following steps we will access and format the "Email" information.
 
 ```json
-"Responsible": [
 {
-    "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-    "Claims": "i:0#.f|membership|meganb@m365x515065.onmicrosoft.com",
-    "DisplayName": "Megan Bowen",
-    "Email": "MeganB@M365x515065.OnMicrosoft.com",
-    "Picture": "https://m365x515065.sharepoint.com/sites/TestTeam2147/_layouts/15/UserPhoto.aspx?Size=L&AccountName=MeganB@M365x515065.OnMicrosoft.com",
-    "Department": "Marketing",
-    "JobTitle": "Marketing Manager"
-},
-{
-    "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
-    "Claims": "i:0#.f|membership|alexw@m365x515065.onmicrosoft.com",
-    "DisplayName": "Alex Wilber",
-    "Email": "AlexW@M365x515065.OnMicrosoft.com",
-    "Picture": "https://m365x515065.sharepoint.com/sites/TestTeam2147/_layouts/15/UserPhoto.aspx?Size=L&AccountName=AlexW@M365x515065.OnMicrosoft.com",
-    "Department": "Marketing",
-    "JobTitle": "Marketing Assistant"
+  "Responsible": [
+    {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+      "Claims": "i:0#.f|membership|meganb@m365x515065.onmicrosoft.com",
+      "DisplayName": "Megan Bowen",
+      "Email": "MeganB@M365x515065.OnMicrosoft.com",
+      "Picture": "https://m365x515065.sharepoint.com/sites/TestTeam2147/_layouts/15/UserPhoto.aspx?Size=L&AccountName=MeganB@M365x515065.OnMicrosoft.com",
+      "Department": "Marketing",
+      "JobTitle": "Marketing Manager"
+    },
+    {
+      "@odata.type": "#Microsoft.Azure.Connectors.SharePoint.SPListExpandedUser",
+      "Claims": "i:0#.f|membership|alexw@m365x515065.onmicrosoft.com",
+      "DisplayName": "Alex Wilber",
+      "Email": "AlexW@M365x515065.OnMicrosoft.com",
+      "Picture": "https://m365x515065.sharepoint.com/sites/TestTeam2147/_layouts/15/UserPhoto.aspx?Size=L&AccountName=AlexW@M365x515065.OnMicrosoft.com",
+      "Department": "Marketing",
+      "JobTitle": "Marketing Assistant"
+    }
+  ]
+}
 ```
 
 3. In the next step we will set the predefined variable "Mails" to the Responsible field and have an array variable with our Resonsible users.
@@ -72,7 +76,7 @@ To realize this, some intermediate steps are necessary by selecting the email ad
 ::blogImage{src="posts/send-email-notification-with-power-automate-based-on-sharepoint-list/20220611015302.png" alt="Power Automate 3"}
 ::
 
-5. In the last step the email addresses have to be formatted correctly so Outlook can use them, therefore it is necessary to convert the values separated by ";".  For this a join operator is used. 'From' is the output of the select action and 'Join with' is defined as the separator ";"
+5. In the last step the email addresses have to be formatted correctly so Outlook can use them, therefore it is necessary to convert the values separated by ";". For this a join operator is used. 'From' is the output of the select action and 'Join with' is defined as the separator ";"
 
 ::blogImage{src="posts/send-email-notification-with-power-automate-based-on-sharepoint-list/20220611015418.png" alt="Power Automate 4"}
 ::

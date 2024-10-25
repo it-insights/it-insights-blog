@@ -18,14 +18,16 @@ date: 2019-07-22 09:00:00
 ---
 
 Azure CDN is a great service to add functionality to your website. In this post we will setup a Azure CDN resource, add a custom domain, activate free SSL and take a look at the CDN rules engine.
+
 <!-- more -->
+
 This is a multi part article with the following parts:
 
-* [Part 1 - Static site generators](/static-websites-with-azure-part-1/)
-* [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2/)
-* [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3/)
-* Part 4 - Configure Azure CDN for static websites (You are here)
-* [Part 5 - Configure Azure Function App for root domain redirection](/static-websites-with-azure-part-5/)
+- [Part 1 - Static site generators](/static-websites-with-azure-part-1)
+- [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2)
+- [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3)
+- Part 4 - Configure Azure CDN for static websites (You are here)
+- [Part 5 - Configure Azure Function App for root domain redirection](/static-websites-with-azure-part-5)
 
 In this part we will setup a Azure CDN service with Verizon tier, connect it to our storage account and add SSL support. Lastly we will take a look at the Verizon rules engine.
 
@@ -69,9 +71,9 @@ After the CDN is created, we have to add an CDN endpoint. One endpoint can serve
 
 As we did not specify it, the endpoint will be reachable by HTTP and HTTPS over port 80 and 443.
 We cannot choose storage as type for the endpoint, as then the blob not the web endpoint of the Azure storage account would be used.
-We just select custom origin and use the http endpoint from [part 2](/static-websites-with-azure-part-2/) (`staticsitedemo.z6.web.core.windows.net`).
+We just select custom origin and use the http endpoint from [part 2](/static-websites-with-azure-part-2) (`staticsitedemo.z6.web.core.windows.net`).
 
-Next we add our custom domain "www.staticwebsite.de". In [part 3](/static-websites-with-azure-part-3/), we already created the necessary DNS records for this step, so we can directly use the following command to add the custom domain:
+Next we add our custom domain "www.staticwebsite.de". In [part 3](/static-websites-with-azure-part-3), we already created the necessary DNS records for this step, so we can directly use the following command to add the custom domain:
 
 ```
 {
@@ -109,10 +111,10 @@ Next we will do some configuration in the Verizon portal. To go there, you have 
 
 We will implement the following features in the Verizon portal:
 
-* HTTP to HTTPS redirection (Rules Engine)
-* Caching (Rules Engine)
-* HSTS header (Rules Engine)
-* Enable GZIP compression in CDN
+- HTTP to HTTPS redirection (Rules Engine)
+- Caching (Rules Engine)
+- HSTS header (Rules Engine)
+- Enable GZIP compression in CDN
 
 The rules engine can be found under "HTTP Large -> Rules Engine".
 
@@ -135,7 +137,7 @@ To redirect traffic flowing over the CDN to the secure HTTPS endpoint, we have t
 
 We basically create a regular expression that matches in every request, coming through the CDN via HTTP and redirect it to `https://www.staticwebsite.de`, attaching everything after the forward slash from the origin to the redirected url.
 
-::blogImage{src="posts/static-websites-with-azure-part-4/cdnhttps.PNG" alt="HTTPS rule"}
+::blogImage{src="posts/static-websites-with-azure-part-4cdnhttps.png" alt="HTTPS rule"}
 ::
 
 ### Caching
@@ -158,19 +160,19 @@ These values differs from website to website depending on how frequently content
 One of the requirements for our website to be listed on the [HTTP strict transport security (HSTS) preload list](https://hstspreload.org/) is to serve a valid `Strict-Transport-Security` header. We can do this by configuring the following rule in the rules engine.
 
 ```xml
-  <rule id="1111111" platform="http-large" status="pending" version="0" custid="XXXXX">
-    <description>Add HSTS header</description>
-    <match.always>
-      <feature.set-response-header action="append" key="Strict-Transport-Security" value="max-age=63072000; includeSubDomains; preload" />
-    </match.always>
-  </rule>
+<rule id="1111111" platform="http-large" status="pending" version="0" custid="XXXXX">
+  <description>Add HSTS header</description>
+  <match.always>
+    <feature.set-response-header action="append" key="Strict-Transport-Security" value="max-age=63072000; includeSubDomains; preload" />
+  </match.always>
+</rule>
 ```
 
 ### Compression
 
 Finally we configure compression for all content types on our CDN endpoint. Therefore we navigate to "HTTP Large -> Cache Settings -> Compression". We just copy the list of all supported content types, replace the line breaks with commas and paste that into the "File Types:" field and set the checkbox to "Compression Enabled".
 
-::blogImage{src="posts/static-websites-with-azure-part-4/cdncompression.png" alt="CDN compression"}
+::blogImage{src="posts/static-websites-with-azure-part-4cdncompression.png" alt="CDN compression"}
 ::
 
 We have configured our Azure CDN endpoint with a few basic rules and enabled gzip based compression for our website.

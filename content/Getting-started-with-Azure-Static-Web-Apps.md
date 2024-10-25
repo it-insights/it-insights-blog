@@ -24,7 +24,7 @@ At Microsoft Build 2020 [lots of new updates and services](https://aka.ms/Build2
 
 First things first, what exactly is Static Web Apps? It is a new service that combines the features of many other Azure resources that we would otherwise need to deploy a production ready static web app to Azure. This includes services like:
 
-- Azure Storage  (for all the files)
+- Azure Storage (for all the files)
 - (Optional) Azure Function Apps (as serverless backend)
 - (Optional) Azure CDN (for free SSL, Caching and CDN rules)
 - (Optional) CI/CD integration (e.g. with Azure DevOps)
@@ -46,7 +46,7 @@ With Azure Static Web Apps you have all this in one service. These are the key f
 To understand how these can help us, we will first start with a small deployment that we can use as an example throughout the post.
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
-If you want to follow though and compare Static Web Apps to a current approach, read [our older posts here](/static-websites-with-azure-part-1/).
+If you want to follow though and compare Static Web Apps to a current approach, read [our older posts here](/static-websites-with-azure-part-1).
 ::
 
 ## Deployment
@@ -141,9 +141,9 @@ The configuration of routes is done with a routes.json file that has to be place
 
 ### Security
 
-Before taking a look at Identity and Access Management (IAM), I want to talk about SSL certificates. For a long time, only bought or custom certificates could be used in Azure services. [It is possible to use let's encrypt in Azure](https://itinsights.org/static-websites-with-azure-part-5/), but in is not an intuitive approach although there is a great App Service extension available.
+Before taking a look at Identity and Access Management (IAM), I want to talk about SSL certificates. For a long time, only bought or custom certificates could be used in Azure services. [It is possible to use let's encrypt in Azure](https://itinsights.org/static-websites-with-azure-part-5, but in is not an intuitive approach although there is a great App Service extension available.
 This is why I was excited when [Microsoft announced](https://azure.microsoft.com/en-us/updates/secure-your-custom-domains-at-no-cost-with-app-service-managed-certificates-preview/) the preview of "App Service Managed Certificates". Then I read "If you’re planning to do a live site migration with TXT record, need support for apex domains, or need a wildcard certificate, then use App Service Certificates or bring our own certificate." and was disappointed again. In Static Web Apps however, it will be possible to use Azure Managed (free) certificates on custom domains (that now support root domains)!
-As long as we are in preview and root domains are not available, feel free to use the method [mentioned above](https://itinsights.org/static-websites-with-azure-part-5/) or use [this excellent tutorial](https://burkeholland.github.io/posts/static-app-root-domain/) by [@Burke Holland](http://www.twitter.com/burkeholland) to achieve the same by using Cloudflare's free CDN tier.
+As long as we are in preview and root domains are not available, feel free to use the method [mentioned above](https://itinsights.org/static-websites-with-azure-part-5) or use [this excellent tutorial](https://burkeholland.github.io/posts/static-app-root-domain/) by [@Burke Holland](http://www.twitter.com/burkeholland) to achieve the same by using Cloudflare's free CDN tier.
 
 Let's take a look at the current authentication/authorization experience. Currently we would need a mix of an Azure Function App with activated and configured "App service authentication" plus client-side application logic (like MSAL and some internal routing) to configure our login/logout routes and to get and display user information. Static Web Apps have built-In authentication using different OAuth2 providers and it exposes the information as well as the endpoints internally with the reverse-proxy. The currently supported providers are:
 
@@ -172,7 +172,7 @@ We can access the information by either using the "direct-access" endpoint ("/.a
 
 ## Pricing
 
-The only currently available pricing tier is free and this free tier will stay  after general availability (GA). When the service is available, additional tiers will be added, probably to allow for some higher performance and better latency. I think this is not really a big difference, as hosting static websites on Azure right now only costs us something between 1$ and 5$ a month depending on the usecase. For more information see our [older posts here](/static-websites-with-azure-part-1/).
+The only currently available pricing tier is free and this free tier will stay after general availability (GA). When the service is available, additional tiers will be added, probably to allow for some higher performance and better latency. I think this is not really a big difference, as hosting static websites on Azure right now only costs us something between 1$ and 5$ a month depending on the usecase. For more information see our [older posts here](/static-websites-with-azure-part-1).
 
 ## Limitations
 

@@ -12,10 +12,6 @@ category:
   - Azure
 author: Christoph Burmeister
 date: 2023-01-13 05:45:00
-head:
-  meta:
-    - name: 'keywords'
-      content: 'nuxt, vue, content'
 ---
 
 Using a central IAM provider is certainly a great thing. While setting SSO up for AWS, the management for the AWS root-users became a issue, because its required for them to have globally unique e-mail address. This might not a problem for small companies, but if you plan several hundred or even thousand of AWS-accounts, this becomes a nightmare real fast. In this post, I will go over one approach on how you can manage all your root-users with M365 offerings and some Azure services, pretty much for free.

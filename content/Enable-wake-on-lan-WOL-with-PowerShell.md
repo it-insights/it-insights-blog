@@ -8,6 +8,7 @@ category:
 ---
 
 With every recent Windows 10 update, and they happen a lot, Windows unfortunately also resets the power settings of the network adapters. Since I like to start both my PC and notebook from a remote location or from within the same network, I wrote a little PowerShell function to enable Wake-on-LAN (WoL) again.
+
 <!-- more -->
 
 At first we need the current instances of the `MSPower_DeviceWakeEnable` class and load them into the `$nicsWakeEnabled` variable. Next, we get a list of NIC objects with the `PNPDeviceID` property by getting the instances of `Win32_NetworkAdapter` (Get-Netadapter doesn't list the `PNPDeviceID` field).

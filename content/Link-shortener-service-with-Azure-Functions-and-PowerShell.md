@@ -47,18 +47,18 @@ That is why we have two functions, getShortlink and getShortlinkDetails. The for
 
 The following table describes the configuration of Azure Functions and Azure Function proxies:
 
-Resource | Authorization | Allowed Methods | Backend Url
----|---|---|----
-Azure Function (getShortlink) | Function Key | GET | -
-Azure Function (getShortlinkDetails) | Function Key | GET | -
-Azure Function (createShortlink) | Function Key | POST | -
-Azure Function (deleteShortlink) | Function Key | DELETE | -
-Azure Function (updateShortlink) | Function Key | PATCH | -
-Azure Function proxy (/v1/shortlink/{shortlink}) | Anonymous | GET | <https://localhost/api/getShortlink>
-Azure Function proxy (/v1/shortlink) | Anonymous | GET | <https://localhost/api/getShortlinkDetails>
-Azure Function proxy (/v1/shortlink) | Anonymous | POST | <https://localhost/api/createShortlink>
-Azure Function proxy (/v1/shortlink) | Anonymous | DELETE | <https://localhost/api/deleteShortlink>
-Azure Function proxy (/v1/shortlink) | Anonymous | PATCH | <https://localhost/api/updateShortlink>
+| Resource                                         | Authorization | Allowed Methods | Backend Url                                 |
+| ------------------------------------------------ | ------------- | --------------- | ------------------------------------------- |
+| Azure Function (getShortlink)                    | Function Key  | GET             | -                                           |
+| Azure Function (getShortlinkDetails)             | Function Key  | GET             | -                                           |
+| Azure Function (createShortlink)                 | Function Key  | POST            | -                                           |
+| Azure Function (deleteShortlink)                 | Function Key  | DELETE          | -                                           |
+| Azure Function (updateShortlink)                 | Function Key  | PATCH           | -                                           |
+| Azure Function proxy (/v1/shortlink/{shortlink}) | Anonymous     | GET             | <https://localhost/api/getShortlink>        |
+| Azure Function proxy (/v1/shortlink)             | Anonymous     | GET             | <https://localhost/api/getShortlinkDetails> |
+| Azure Function proxy (/v1/shortlink)             | Anonymous     | POST            | <https://localhost/api/createShortlink>     |
+| Azure Function proxy (/v1/shortlink)             | Anonymous     | DELETE          | <https://localhost/api/deleteShortlink>     |
+| Azure Function proxy (/v1/shortlink)             | Anonymous     | PATCH           | <https://localhost/api/updateShortlink>     |
 
 We will use the localhost notation to avoid internet roundtrips for Azure Function proxies. We also have to add the HTTP method to enable filtering by objective (GET to getShortlink).
 I made some decisions that you might want to re-evaluate for your specific use case:
@@ -218,8 +218,8 @@ and this is the corresponding `function.json` binding configuration:
 
 We can now call the API from a web application (I am using NUXTjs which uses axios as a library for HTTP requests) like this in a form:
 
-```js
-onSubmit(evt) {
+```javascript
+function onSubmit(evt) {
   evt.preventDefault()
   this.$axios({
     method: 'POST',
@@ -235,14 +235,15 @@ onSubmit(evt) {
       console.error(error)
       this.submitError = true
     })
-},
+}
 ```
 
 For the access key and the corresponding link information, I have created a validation module for the HTML form that enabled updates:
 
-```js
-async isValid(value) {
-  if (value === '' || value === null) return false
+```javascript
+async function isValid(value) {
+  if (value === '' || value === null)
+    return false
   try {
     const { data } = await this.$axios.get(
       `https://api.yourdomain.abc/v1/shortlink?accessKey=${value}`
@@ -250,7 +251,8 @@ async isValid(value) {
     this.form.url = data.url
     this.form.date = data.expirationDate
     return Boolean(await data)
-  } catch {
+  }
+  catch {
     return false
   }
 }

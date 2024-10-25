@@ -10,12 +10,13 @@ date: 2018-03-04 10:01:59
 ---
 
 This blog series introduces a PowerShell module that automatically generated MarkDown documentation of your PowerShell Scripts and modules. It also gives an introduction into Abstract Syntax Trees (ASTs) in PowerShell.
+
 <!-- more -->
 
 This is a multi part article with the following parts:
 
-* [Part 1 - Use Abstract Syntax Trees (ASTs) to parse PowerShell files](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1/)
-* [Part 2 - Using the EPS Module to generate Markdown documents](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1/)
+- [Part 1 - Use Abstract Syntax Trees (ASTs) to parse PowerShell files](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1/)
+- [Part 2 - Using the EPS Module to generate Markdown documents](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1/)
 
 ## Part 1 - Use Abstract Syntax Trees (ASTs) to parse PowerShell files
 
@@ -28,19 +29,19 @@ ASTs are the basic of PowerShell's parsing engine. Using ASTs we can simply gene
 We will first take a look at the "[System.Management.Automation.Language]" .NET Namespace and will use it afterwards to get and work with the AST for our specific file.
 The classes and methods we are going to use are:
 
-* System.Management.Automation.Language.Parser
-* System.Management.Automation.Language.FunctionMemberAst
-* System.Management.Automation.Language.FunctionDefinitionAst
-* System.Management.Automation.Language.CommentHelpInfo
-* System.Management.Automation.Language.Ast
+- System.Management.Automation.Language.Parser
+- System.Management.Automation.Language.FunctionMemberAst
+- System.Management.Automation.Language.FunctionDefinitionAst
+- System.Management.Automation.Language.CommentHelpInfo
+- System.Management.Automation.Language.Ast
 
-Classname | Description
---- | ---
-Parser | This class is the most important one. We will use this class to parse script and module files and get a representation of the syntax tree of the inputs files. This can be used to extract information, but also to get an overview and dive deep into the internals of PowerShell. The parser returns Ast tokens and errors, if the script cannot be parsed successfully.
-FunctionMemberAst | This class contains the definition for a defined method inside of the parsed script file.
-CommentHelpInfo | This class contains the help content, specified by comments of script functions.
-FunctionDefinitionAst | This class contains function definition representations.
-Ast | This class ist just an abstract class for abstract syntax tree nodes.
+| Classname             | Description                                                                                                                                                                                                                                                                                                                                                                |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Parser                | This class is the most important one. We will use this class to parse script and module files and get a representation of the syntax tree of the inputs files. This can be used to extract information, but also to get an overview and dive deep into the internals of PowerShell. The parser returns Ast tokens and errors, if the script cannot be parsed successfully. |
+| FunctionMemberAst     | This class contains the definition for a defined method inside of the parsed script file.                                                                                                                                                                                                                                                                                  |
+| CommentHelpInfo       | This class contains the help content, specified by comments of script functions.                                                                                                                                                                                                                                                                                           |
+| FunctionDefinitionAst | This class contains function definition representations.                                                                                                                                                                                                                                                                                                                   |
+| Ast                   | This class ist just an abstract class for abstract syntax tree nodes.                                                                                                                                                                                                                                                                                                      |
 
 To just get the Ast of a script file, we can use just a few lines of code:
 

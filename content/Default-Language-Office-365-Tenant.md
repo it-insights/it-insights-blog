@@ -10,6 +10,7 @@ date: 2019-07-01 07:15:00
 ---
 
 A frequent question regarding Office 365/Azure tenants is, which default language is used for the individual services and where it can be changed. In general, every user can set his own language in the user settings (MyAccount - Settings - Language and Time zone), but there are also services where the default language cannot be changed afterwards.
+
 <!-- more -->
 
 For example SharePoint is one of these services, where the default language cannot be changed afterwards. Only in a Site Collection, additional languages can be added to subsites. The problem is that e.g. newly created Teams will have the default language settings of the tenant applied again. New languages can be added afterwards, but existing resources like created OneNote notebooks will stay on the default language.

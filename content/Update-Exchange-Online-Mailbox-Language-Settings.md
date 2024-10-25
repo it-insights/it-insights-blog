@@ -20,13 +20,11 @@ keyword:
 date: 2022-07-20 19:52:17
 ---
 
-
 Based on the default settings and configuration, mailboxes in Exchange / Exchange Online are created with the default language. This is causing some users to see Inbox (default language en-US) in Outlook instead of "Postfach" (German).
 
 <!-- more -->
 
 This change of the mailbox language can also occur during migration. For example, this problem can happen during a tenant-to-tenant migration of Exchange Online, so it is recommended to check and modify the mailbox language after a successful mailbox migration.
-
 
 The customization of the mailbox language can only be done using PowerShell. After the modification with the command Set-MailboxRegionalConfiguration the set language is automatically displayed in Outlook.
 
@@ -36,33 +34,30 @@ To change the mailbox langauge, the following PowerShell command is used:
 </br>
 
 ```powershell
-
 Set-MailboxRegionalConfiguration -Identity "Username/Address" -Language de-de -DateFormat $null -TimeFormat $null -LocalizeDefaultFolderName
-
-````
+```
 
 </br>
 
 For setting the mailbox configuration the identity is needed and to specify which object should be changed. For Identity not only the name can be used, the following values are available to identify the mailbox.
 
--   Name
--   Alias
--   Distinguished name (DN)
--   Canonical DN
--   Domain\Username
--   Email address
--   GUID
--   LegacyExchangeDN
--   SamAccountName
--   User ID or user principal name (UPN)
+- Name
+- Alias
+- Distinguished name (DN)
+- Canonical DN
+- Domain\Username
+- Email address
+- GUID
+- LegacyExchangeDN
+- SamAccountName
+- User ID or user principal name (UPN)
 
 </br>
 
-The Date Format can be set manually or to $Null ,then the default settings for will be used. 
+The Date Format can be set manually or to $Null ,then the default settings for will be used.
 </br>
 
-````
-
+```
 -   M/d/yyyy:  default value for en-US.
 -   M/d/yy
 -   MM/dd/yy
@@ -70,23 +65,20 @@ The Date Format can be set manually or to $Null ,then the default settings for w
 -   yy/MM/dd
 -   yyyy-MM-dd
 -   dd-MMM-yy
-
-````
+```
 
 </br>
 The "LocalizeDefaultFolderName" parameter localizes the standard folder names of the mailbox in the current or the specified language. You do not need to specify a value for this option
 
 ```powershell
 -LocalizeDefaultFolderName
-
 ```
 
 For the languages the corresponding language tags are used. I have collected an extract from the possible language tags below.
 </br>
 
-
 | Language             | Geographic area            | Language tag |
-|----------------------|----------------------------|--------------|
+| -------------------- | -------------------------- | ------------ |
 | Arabic               | Saudi Arabia               | ar-SA        |
 | Bulgarian            | Bulgaria                   | bg-BG        |
 | Chinese (Simplified) | People's Republic of China | zh-CN        |
@@ -123,20 +115,17 @@ For the languages the corresponding language tags are used. I have collected an 
 
 </br>
 
-In a lot of migration scenarios you have a large number of users that you want to check or customize. To do this, you can import the data based on a user list (csv), and let the users be customized via a PowerShell Loop to modify the users. 
+In a lot of migration scenarios you have a large number of users that you want to check or customize. To do this, you can import the data based on a user list (csv), and let the users be customized via a PowerShell Loop to modify the users.
 </br>
 
-``` powershell 
-
+```powershell
 Connect-ExchangeOnline
 
 $migrateduser = Import-CSV "Path\Filename.csv"  -Encoding UTF8
 
-Foreach($user in $migrateduser)
-{
-	Set-MailboxRegionalConfiguration -Identity $user.Mail -Language de-de 
-	-DateFormat $null -TimeFormat $null -LocalizeDefaultFolderName  
+Foreach($user in $migrateduser) {
+  Set-MailboxRegionalConfiguration -Identity $user.Mail -Language de-de -DateFormat $null -TimeFormat $null -LocalizeDefaultFolderName
 }
-
 ```
+
 </br>

@@ -29,10 +29,10 @@ The HashiCorp Vault JWT/OIDC Auth Method can be used for Authentication by eithe
 
 In this Scenario the following Environment is assumed:
 
-* Running HashiCorp Vault Instance
-* 2 Development Teams (Team Python-App and Team Go-App)
-* Members of the two Teams need access to corresponding Paths in HashiCorp Vault (secret/python-app/*and secret/go-app/*)
-* All Members of the two Teams are in corresponding Azure AD Groups
+- Running HashiCorp Vault Instance
+- 2 Development Teams (Team Python-App and Team Go-App)
+- Members of the two Teams need access to corresponding Paths in HashiCorp Vault (secret/python-app/_and secret/go-app/_)
+- All Members of the two Teams are in corresponding Azure AD Groups
 
 ## Overview
 
@@ -45,11 +45,11 @@ The following Graphic provides an Overview of the basic Login Flow that takes Pl
 
 To configure an OIDC Application for Azure AD the following High-Level Steps have to be performed beforehand:
 
-* Create or select an Azure AD Application
-* Configure Redirect URIs (Type: web)
-* Grant the AAD application the permission: Group.Read.All
-* Create a secrets for the AAD application
-* groupMembershipClaims should be set to "All" or "Security" in the App registration manifest
+- Create or select an Azure AD Application
+- Configure Redirect URIs (Type: web)
+- Grant the AAD application the permission: Group.Read.All
+- Create a secrets for the AAD application
+- groupMembershipClaims should be set to "All" or "Security" in the App registration manifest
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
 These steps usually need to be performed by an Azure Active Directory Administrator.
@@ -75,9 +75,9 @@ This Post assumes the standard Paths so adjust the Paths to the ones in your Env
 
 The OIDC Configuration expects the following parameters:
 
-* oidc_discovery_url
-* oidc_client_id
-* oidc_client_secret
+- oidc_discovery_url
+- oidc_client_id
+- oidc_client_secret
 
 oidc_discovery_url:
 This Parameter specifies the OIDC Discovery URL, without any .well-know components. For Azure AD this URL looks like this:
@@ -91,10 +91,10 @@ Make sure to replace the tenant id with the ID of your tenant. There are multipl
 oidc_client:
 oidc_client_id and oidc_client_secret represent the Credentials for the Azure AD Application that was registered or selected for use with HashiCorp Vault.
 
-| Parameter | Description |
-|---|---|
-| oidc_client_id  | The Azure AD App registration Application (Client) ID |
-| oidc_client_secret  | The Azure AD App registration Application (Client) Secret |
+| Parameter          | Description                                               |
+| ------------------ | --------------------------------------------------------- |
+| oidc_client_id     | The Azure AD App registration Application (Client) ID     |
+| oidc_client_secret | The Azure AD App registration Application (Client) Secret |
 
 These Values can be retrieved via the Azure Portal under Azure Active Directory-> App registrations. Select your App Registration to view the Details.
 
@@ -114,14 +114,14 @@ Make sure to replace your tenant specific values!
 
 The Role configuration specifies User Claims, Group Claims, OIDC Scope, Default Access Policy, Token TTL and allowed Redirect URIs:
 
-| Parameter  | Description |
-|---|---|
-| user-claim  | The claim to use to uniquely identify the user; this will be used as the name for the Identity entity alias created due to a successful login |
-| oidc_scope  | A list of OIDC scopes to be used with an OIDC role |
-| groups_claim | The claim to use to uniquely identify the set of groups to which the user belongs |
-| policies | List of default policies to encode onto generated tokens. |
-| ttl | The incremental lifetime for generated tokens |
-| allowed_redirect_uris | The list of allowed values for redirect_uri during OIDC logins |
+| Parameter             | Description                                                                                                                                   |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
+| user-claim            | The claim to use to uniquely identify the user; this will be used as the name for the Identity entity alias created due to a successful login |
+| oidc_scope            | A list of OIDC scopes to be used with an OIDC role                                                                                            |
+| groups_claim          | The claim to use to uniquely identify the set of groups to which the user belongs                                                             |
+| policies              | List of default policies to encode onto generated tokens.                                                                                     |
+| ttl                   | The incremental lifetime for generated tokens                                                                                                 |
+| allowed_redirect_uris | The list of allowed values for redirect_uri during OIDC logins                                                                                |
 
 Write the Role configuration with the following command:
 

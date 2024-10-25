@@ -33,7 +33,7 @@ We collect several different types of information for various purposes to provid
 
 While using our Service, we may ask you to provide us with certain personally identifiable information that can be used to contact or identify you ("Personal Data"). Personally identifiable information may include, but is not limited to:
 
-* Cookies and Usage Data
+- Cookies and Usage Data
 
 #### Usage Data
 
@@ -49,21 +49,21 @@ You can instruct your browser to refuse all cookies or to indicate when a cookie
 
 Examples of Cookies we use:
 
-* Session Cookies. We use Session Cookies to operate our Service.
-* Preference Cookies. We use Preference Cookies to remember your preferences and various settings.
-* Security Cookies. We use Security Cookies for security purposes.
+- Session Cookies. We use Session Cookies to operate our Service.
+- Preference Cookies. We use Preference Cookies to remember your preferences and various settings.
+- Security Cookies. We use Security Cookies for security purposes.
 
 ## Use of Data
 
 IT Insights uses the collected data for various purposes:
 
-* To provide and maintain the Service
-* To notify you about changes to our Service
-* To allow you to participate in interactive features of our Service when you choose to do so
-* To provide customer care and support
-* To provide analysis or valuable information so that we can improve the Service
-* To monitor the usage of the Service
-* To detect, prevent and address technical issues
+- To provide and maintain the Service
+- To notify you about changes to our Service
+- To allow you to participate in interactive features of our Service when you choose to do so
+- To provide customer care and support
+- To provide analysis or valuable information so that we can improve the Service
+- To monitor the usage of the Service
+- To detect, prevent and address technical issues
 
 ## Transfer Of Data
 
@@ -81,11 +81,11 @@ IT Insights will take all steps reasonably necessary to ensure that your data is
 
 IT Insights may disclose your Personal Data in the good faith belief that such action is necessary to:
 
-* To comply with a legal obligation
-* To protect and defend the rights or property of IT Insights
-* To prevent or investigate possible wrongdoing in connection with the Service
-* To protect the personal safety of users of the Service or the public
-* To protect against legal liability
+- To comply with a legal obligation
+- To protect and defend the rights or property of IT Insights
+- To prevent or investigate possible wrongdoing in connection with the Service
+- To protect the personal safety of users of the Service or the public
+- To protect against legal liability
 
 ## Security Of Data
 
@@ -101,19 +101,19 @@ These third parties have access to your Personal Data only to perform these task
 
 We may use third-party Service Providers to monitor and analyze the use of our Service.
 
-* Google Analytics
+- Google Analytics
 
-   Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.
+  Google Analytics is a web analytics service offered by Google that tracks and reports website traffic. Google uses the data collected to track and monitor the use of our Service. This data is shared with other Google services. Google may use the collected data to contextualize and personalize the ads of its own advertising network.
 
-   You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.
+  You can opt-out of having made your activity on the Service available to Google Analytics by installing the Google Analytics opt-out browser add-on. The add-on prevents the Google Analytics JavaScript (ga.js, analytics.js, and dc.js) from sharing information with Google Analytics about visits activity.
 
-   You can configure Opt-Out Cookie by {% jslink "clicking here" gaOptout %}.
+  You can configure Opt-Out Cookie by {% jslink "clicking here" gaOptout %}.
 
-   For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: https://policies.google.com/privacy?hl=en
+  For more information on the privacy practices of Google, please visit the Google Privacy & Terms web page: https://policies.google.com/privacy?hl=en
 
 ## Cloudflare/Algolia
 
-The search service on this site (algolia) uses Cloudflare to serve its search results. Cloudflare may place a cookie in your browser to help it provide its services. 
+The search service on this site (algolia) uses Cloudflare to serve its search results. Cloudflare may place a cookie in your browser to help it provide its services.
 You can read more about Cloudflare and how it uses cookies here: https://www.cloudflare.com/privacypolicy/
 You can read more about algolia and how it uses cookies here: https://www.algolia.com/policies/privacy/
 
@@ -141,8 +141,8 @@ You are advised to review this Privacy Policy periodically for any changes. Chan
 
 If you have any questions about this Privacy Policy, please contact us:
 
-* By email: admin@itinsights.org
-* By phone number: +491752315850
+- By email: admin@itinsights.org
+- By phone number: +491752315850
 
 ## Disclaimer
 
@@ -157,10 +157,10 @@ Comments
 
 ## Comments are welcome. However, the blog owner reserves the right to edit or delete any comments submitted to this blog without notice due to
 
-* Comments deemed to be spam or questionable spam.
-* Comments including profanity.
-* Comments containing language or concepts that could be deemed offensive.
-* Comments containing hate speech, credible threats, or direct attacks on an individual or group.
+- Comments deemed to be spam or questionable spam.
+- Comments including profanity.
+- Comments containing language or concepts that could be deemed offensive.
+- Comments containing hate speech, credible threats, or direct attacks on an individual or group.
 
 The blog owner is not responsible for the content in comments.
 
@@ -169,4 +169,5 @@ The blog owner is not responsible for the content in comments.
 Our web pages and their contents are subject to German copyright law. Unless expressly permitted by law, every form of utilizing, reproducing or processing works subject to copyright protection on our web pages requires the prior consent of the respective owner of the rights. Individual reproductions of a work are only allowed for private use. The materials from these pages are copyrighted and any unauthorized use may violate copyright laws.
 
 ## Graphics and Image Sources
+
 ©AlexanderAntony - stock.adobe.com

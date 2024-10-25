@@ -12,8 +12,7 @@ author: Jacob Meissner
 date: 2019-09-17 09:55:00
 ---
 
-
-In Azure, Microsoft already offers a variety of cognitive services such as Voice and Face Recognition for language, face, emotion, age and more recognitions. With the Cognitive Service Form Recognizer,  Microsoft has extended it's portfolio and offers the possibility to accelerate existing business processes through automation.
+In Azure, Microsoft already offers a variety of cognitive services such as Voice and Face Recognition for language, face, emotion, age and more recognitions. With the Cognitive Service Form Recognizer, Microsoft has extended it's portfolio and offers the possibility to accelerate existing business processes through automation.
 
 <!-- more -->
 
@@ -28,7 +27,7 @@ There are still some further requirements such as resolution, language etc.. You
 
 The next step is the preparation and training of the service. The complete configuration and future consumption of the service is currently only possible via API. There is no GUI for this service, but a very good and comprehensive API documentation. To provide the five sample forms, you can use various upload options. I decided to use a relatively simple option using an Azure Storage Account (Blob Storage) and Microsoft Forms Recognizer Website Console.
 Therefore we have to create a storage account with a blob container named "learn". To use this container a Shared Access Signature (SAS) URL is required. A SAS URL must be generated for this purpose. This can be done by adding the Storage Accounts to the Storage Explorer and use it's SAS generation functionality. Please observe the correct date in ragards to your current time zone when generating the SAS URL for the "learn" container. Then upload the 5 sample forms into the created blog container "learn".
-I use the [Microsoft example data set](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample_data.zip) for  provisioning and testing. It consists of five invoice forms.
+I use the [Microsoft example data set](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/curl/form-recognizer/sample_data.zip) for provisioning and testing. It consists of five invoice forms.
 
 ::blogImage{src="posts/cognitive-service-and-integration-in-office-365-form-recognizer/FR1.png" alt="Storage Explorer - generate SAS URL"}
 ::
@@ -65,19 +64,19 @@ In this case, I use OneDrive for Business to provide data for analysis. This way
 ::blogImage{src="posts/cognitive-service-and-integration-in-office-365-form-recognizer/FR4.png" alt="Microsoft Flow - OneDrive for Business"}
 ::
 
-In the next step we first define the variables that are needed for the extraction and transfer. Because the example data used by me contains a table, I created the required variables.  It depends of course on the database which and many variables you need to process your information.
+In the next step we first define the variables that are needed for the extraction and transfer. Because the example data used by me contains a table, I created the required variables. It depends of course on the database which and many variables you need to process your information.
 ::blogImage{src="posts/cognitive-service-and-integration-in-office-365-form-recognizer/FR5.png" alt="Microsoft Flow - Variables"}
 ::
 
-  Then we come to the integration of the Form Recognizer service into the flow. The data from OneDrive is transferred to the service via HTTP. We create the HTTP action and select the method "Post" and configure the URL based on our endpoint including the generated model ID.
+Then we come to the integration of the Form Recognizer service into the flow. The data from OneDrive is transferred to the service via HTTP. We create the HTTP action and select the method "Post" and configure the URL based on our endpoint including the generated model ID.
 
 ```json
 {
   "URI": "https://formrecognizercim.cognitiveservices.azure.com/formrecognizer/v1.0-preview/custom/models/your-mode-id/analyze"
 }
 ```
-  
-  Furthermore we enter our Form Recognizer Service Key and in the Body we select OneDrive for Business "File Content". Setting the Content-Type value is not required in Microsoft Flow.
+
+Furthermore we enter our Form Recognizer Service Key and in the Body we select OneDrive for Business "File Content". Setting the Content-Type value is not required in Microsoft Flow.
 
 ::blogImage{src="posts/cognitive-service-and-integration-in-office-365-form-recognizer/FR6.png" alt="Microsoft Flow - HTTP Action"}
 ::
@@ -102,14 +101,14 @@ To analyze the required information, it must be extracted from the previous JSON
 
 The Headers variable is set with the following expression:
 
-```json
-  items('Iterate_columns')?['header'][0]['text']
+```
+items('Iterate_columns')?['header'][0]['text']
 ```
 
 The Entries variable is set with the following expression:
 
-```json
-    items('Iterate_columns')?['entries'][0][0]['text']
+```
+items('Iterate_columns')?['entries'][0][0]['text']
 ```
 
 The information that is analyzed by the Form Recognizer Service when reading the PDF / JPG / PNG is now available for further processing and transfer, for example to a SharePoint list or Dynamics or all other Flow connectors.

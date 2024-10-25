@@ -24,16 +24,16 @@ Since May 2018, [Fabian](https://twitter.com/fabian_bader) and [I](https://twitt
 
 This Speaker Lineup speaks for itself, for me, is's still unbelievable.
 
-| Session  | Speaker | Type | Timeslot |
-|---|---|---|---|
-| PowerShell in SQL Notebooks in Azure Data Studio  | [Rob Sewell](https://twitter.com/sqldbawithbeard) | Session | 10:30 |
-| Certificate Management using Azure Automation and Let's Encrypt  | [Fabian Bader](https://twitter.com/fabian_bader) | Workshop | 10:30 |
-| PowerShell - a current Overview  | [Tobias Weltner](https://twitter.com/TobiasPSP) | Session | 11:30 |
-| Bringing classes and runspaces together - Async logging in PowerShell  | [Jan-Henrik Damaschke](https://twitter.com/JanDamaschke) | Session | 13:15 |
-| What to do if it grows?  | [Evgenij Smirnov](https://twitter.com/cj_berlin) | Workshop | 13:15 |
-| Universal Dashboard with PowerShell  | [Holger Voges](https://twitter.com/HolgerVoges) | Session | 14:15 |
-| Do the -split!  | [Mathias Jessen](https://twitter.com/IISResetMe) | Session | 15:30 |
-| Configuration-driven Active Directory Management  | [Friedrich Weinmann](https://twitter.com/FredWeinmann) | Session | 16:30 |
+| Session                                                               | Speaker                                                  | Type     | Timeslot |
+| --------------------------------------------------------------------- | -------------------------------------------------------- | -------- | -------- |
+| PowerShell in SQL Notebooks in Azure Data Studio                      | [Rob Sewell](https://twitter.com/sqldbawithbeard)        | Session  | 10:30    |
+| Certificate Management using Azure Automation and Let's Encrypt       | [Fabian Bader](https://twitter.com/fabian_bader)         | Workshop | 10:30    |
+| PowerShell - a current Overview                                       | [Tobias Weltner](https://twitter.com/TobiasPSP)          | Session  | 11:30    |
+| Bringing classes and runspaces together - Async logging in PowerShell | [Jan-Henrik Damaschke](https://twitter.com/JanDamaschke) | Session  | 13:15    |
+| What to do if it grows?                                               | [Evgenij Smirnov](https://twitter.com/cj_berlin)         | Workshop | 13:15    |
+| Universal Dashboard with PowerShell                                   | [Holger Voges](https://twitter.com/HolgerVoges)          | Session  | 14:15    |
+| Do the -split!                                                        | [Mathias Jessen](https://twitter.com/IISResetMe)         | Session  | 15:30    |
+| Configuration-driven Active Directory Management                      | [Friedrich Weinmann](https://twitter.com/FredWeinmann)   | Session  | 16:30    |
 
 [Fabian](https://twitter.com/fabian_bader) and I would like to thank all Speakers for coming to Hamburg and sharing their Knowledge!
 
@@ -46,6 +46,7 @@ The Presentations will be available in the next days - I will update the table a
 Without our Sponsors, this Event would not have been possible. We would like to sent a big THANK YOU to [QSC AG](https://www.qsc.de/de/), [Aequitas Integration GmbH](https://aequitas-integration.de/) and [Visorian GmbH](https://www.visorian.com).
 
 ## Thank You All
+
 I'm actually shocked by the fact, that so many people came to Hamburg from so many different places - Rob flew in from the UK, Mathias from Amsterdam, Tobias and Holger from Hannover, Evgenij from Berlin, but also the Attendees were not just from Hamburg, we had people drive up from Dresden, Stuttgart, Berlin, Rostock, Braunschweig and even some that flew in from Switzerland and Austria - incredible! We really appreciate every single one of you!
 A special thanks goes to [Sönke](https://twitter.com/groove64) for helping us throughout the entire planning phase of the event as well as for being there the entire day - we cannot thank you enough!
 

@@ -1,6 +1,5 @@
 {
   "recommendations": [
-    "davidanson.vscode-markdownlint",
     "editorconfig.editorconfig",
     "nuxt.mdc",
     "dbaeumer.vscode-eslint",

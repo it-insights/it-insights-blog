@@ -8,6 +8,8 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     '@nuxt/scripts',
     '@nuxthq/studio',
+    'nuxt-delay-hydration',
+    'nuxt-vitalizer',
   ],
   extends: ['@nuxt/ui-pro'],
 
@@ -47,6 +49,11 @@ export default defineNuxtConfig({
   },
   icon: {
     clientBundle: {
+      icons: [
+        'heroicons:clipboard-document',
+        'heroicons:sun',
+        'heroicons:moon',
+      ],
       scan: true,
     },
   },
@@ -114,6 +121,9 @@ export default defineNuxtConfig({
         ],
       },
     },
+  },
+  delayHydration: {
+    mode: 'init',
   },
   schemaOrg: {
     enabled: false,

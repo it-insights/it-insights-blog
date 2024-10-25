@@ -12,10 +12,11 @@ category:
   - Automation
 ---
 
-
 If you are like me from Germany, but used to writing on a EN-US or EN-GB keyboard layout, you probably ran into the problem of writing special characters like "ä", "ü" or "ß".
 This is why I searched for a more simple solution then changing the layout with WIN+SPACE frequently.
+
 <!-- more -->
+
 For me the best solution was an AutoHotkey script. AutoHotkey is great for several reasons:
 
 - It can be interpreted or compiled and used as an executable (ok, this has also security implications, but let's ignore them for this post)

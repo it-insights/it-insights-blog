@@ -23,6 +23,7 @@ date: 2019-06-19 01:30:00
 ---
 
 To keep your readers up to date and to deliver constant social media activity, it's a great idea to provide weekly digests to your readers. And what could be better to get the job done than Azure Logic Apps ;)
+
 <!-- more -->
 <!-- toc -->
 
@@ -66,15 +67,17 @@ As a trigger we use the Recurrence Action from Logic Apps with the following con
 ::
 
 ```json
-"triggers": {
+{
+  "triggers": {
     "Recurrence": {
-        "recurrence": {
-            "frequency": "Week",
-            "interval": 1,
-            "startTime": "2019-02-22T09:00:00Z"
-        },
-        "type": "Recurrence"
+      "recurrence": {
+        "frequency": "Week",
+        "interval": 1,
+        "startTime": "2019-02-22T09:00:00Z"
+      },
+      "type": "Recurrence"
     }
+  }
 }
 ```
 
@@ -86,17 +89,19 @@ To collect all posts into a variable, we need to initialize it first. To declare
 ::
 
 ```json
-"Initialize_posts_string": {
+{
+  "Initialize_posts_string": {
     "inputs": {
-        "variables": [
-            {
-                "name": "posts_string",
-                "type": "String"
-            }
-        ]
+      "variables": [
+        {
+          "name": "posts_string",
+          "type": "String"
+        }
+      ]
     },
     "runAfter": {},
     "type": "InitializeVariable"
+  }
 }
 ```
 
@@ -108,25 +113,27 @@ To get a recent list of blog posts, we create a "List all RSS feed items" action
 ::
 
 ```json
-"List_all_RSS_feed_items": {
+{
+  "List_all_RSS_feed_items": {
     "inputs": {
-        "host": {
-            "connection": {
-                "name": "@parameters('$connections')['rss']['connectionId']"
-            }
-        },
-        "method": "get",
-        "path": "/ListFeedItems",
-        "queries": {
-            "feedUrl": "https://itinsights.org/atom.xml"
+      "host": {
+        "connection": {
+          "name": "@parameters('$connections')['rss']['connectionId']"
         }
+      },
+      "method": "get",
+      "path": "/ListFeedItems",
+      "queries": {
+        "feedUrl": "https://itinsights.org/atom.xml"
+      }
     },
     "runAfter": {
-        "Initialize_posts_string": [
-            "Succeeded"
-        ]
+      "Initialize_posts_string": [
+        "Succeeded"
+      ]
     },
     "type": "ApiConnection"
+  }
 }
 ```
 
@@ -139,15 +146,17 @@ We use the automatic "Body" variable from the previous "List_all_RSS_feed_items"
 ::
 
 ```json
-"expression": {
+{
+  "expression": {
     "and": [
-        {
-            "greater": [
-                "@formatDateTime(items('For_each_2')?['publishDate'])",
-                "@addDays(utcNow(), -7)"
-            ]
-        }
+      {
+        "greater": [
+          "@formatDateTime(items('For_each_2')?['publishDate'])",
+          "@addDays(utcNow(), -7)"
+        ]
+      }
     ]
+  }
 }
 ```
 
@@ -160,20 +169,22 @@ Thanks to the nested property "Feed links", we can directly use that variable an
 ::
 
 ```json
-"For_each": {
+{
+  "For_each": {
     "actions": {
-        "Append_to_string_variable": {
-            "inputs": {
-                "name": "posts_string",
-                "value": "@concat(items('For_each'), '\n')"
-            },
-            "runAfter": {},
-            "type": "AppendToStringVariable"
-        }
+      "Append_to_string_variable": {
+        "inputs": {
+          "name": "posts_string",
+          "value": "@concat(items('For_each'), '\n')"
+        },
+        "runAfter": {},
+        "type": "AppendToStringVariable"
+      }
     },
     "foreach": "@items('For_each_2')?['links']",
     "runAfter": {},
     "type": "Foreach"
+  }
 }
 ```
 
@@ -200,25 +211,27 @@ Here is the link to the discussion: [How-to-calculate-week-number-in-a-year-in-f
 ::
 
 ```json
-"Post_a_tweet": {
+{
+  "Post_a_tweet": {
     "inputs": {
-        "host": {
-            "connection": {
-                "name": "@parameters('$connections')['twitter']['connectionId']"
-            }
-        },
-        "method": "post",
-        "path": "/posttweet",
-        "queries": {
-            "tweetText": "@{concat('ItInsights Weekly Digest CW ', If(greater(div(float(dayOfYear(utcNow())),7),div(dayOfYear(utcNow()),7)),div(add(dayOfYear(utcNow()),6),7),div(dayOfYear(utcNow()),7)), '\n\n',variables('posts_string'), '\n', '#weekly #digest #insights')}"
+      "host": {
+        "connection": {
+          "name": "@parameters('$connections')['twitter']['connectionId']"
         }
+      },
+      "method": "post",
+      "path": "/posttweet",
+      "queries": {
+        "tweetText": "@{concat('ItInsights Weekly Digest CW ', If(greater(div(float(dayOfYear(utcNow())),7),div(dayOfYear(utcNow()),7)),div(add(dayOfYear(utcNow()),6),7),div(dayOfYear(utcNow()),7)), '\n\n',variables('posts_string'), '\n', '#weekly #digest #insights')}"
+      }
     },
     "runAfter": {
-        "For_each_2": [
-            "Succeeded"
-        ]
+      "For_each_2": [
+        "Succeeded"
+      ]
     },
     "type": "ApiConnection"
+  }
 }
 ```
 

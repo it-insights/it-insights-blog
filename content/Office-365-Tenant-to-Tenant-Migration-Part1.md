@@ -12,11 +12,12 @@ date: 2022-03-05 15:21:17
 ---
 
 Business changes, acquisitions, divestments, and corporate reorganizations often result in the need to merge companies or divisions. Today, a large number of companies already use Office 365 services, so an important step for IT is to ensure seamless collaboration and provide centralized management for the various divisions / companies.
+
 <!-- more -->
 
 This is a multi part article with the following parts:
 
-* [Office 365 Tenant to Tenant Migration Fundamentals](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1/)
+- [Office 365 Tenant to Tenant Migration Fundamentals](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1/)
 
 Based on these requirements, an Office 365 Single Tenant is usually preferred and necessary. This article looks at merging the existing Office 365 tenants and data migration.
 
@@ -33,9 +34,9 @@ First of all, after the business requirements for merging the business units/com
 
 All these are basic considerations that should be discussed, analyzed and described in advance. The following factors should always be considered:
 
-* What is the long-term strategic alignment for the company?
-* Are further mergers planned in the future?
-* Will further mergers result in a change of name or the founding of a new company in the future?
-* Can the name continue to be used during a migration to an existing tenant? (In Office 365, the display name, as well as other domains can be migrated, but the name that was chosen during tenant creation company-A.onmicrosoft.com / company-A.sharepoint.com can not be changed).
+- What is the long-term strategic alignment for the company?
+- Are further mergers planned in the future?
+- Will further mergers result in a change of name or the founding of a new company in the future?
+- Can the name continue to be used during a migration to an existing tenant? (In Office 365, the display name, as well as other domains can be migrated, but the name that was chosen during tenant creation company-A.onmicrosoft.com / company-A.sharepoint.com can not be changed).
 
 > A tenant migration is usually an **complex, cost-intensive** project. The user impact and the possible **service restrictions** should be planned into the project. As more services are used in the source environments (Azure / Office 365), migration scenarios become more complex, so this fundamental decision should be made for the long term.

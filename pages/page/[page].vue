@@ -5,7 +5,7 @@ const limit = ref(6)
 const skip = computed(() => (page.value - 1) * limit.value + 1)
 const count = await queryContent().count()
 const { sidebarLinks } = useSocialLinks()
-const { data: posts } = await useAsyncData('posts', () => queryContent()
+const { data: posts } = await useAsyncData(`page-${route.params.page}-posts`, () => queryContent()
   .where({ _extension: 'md', author: { $ne: 'itinsights' } })
   .sort({ date: -1 })
   .skip(skip.value)
@@ -16,7 +16,7 @@ const { data: posts } = await useAsyncData('posts', () => queryContent()
 </script>
 
 <template>
-  <UPage class="mx-auto max-w-5xl px-4 py-8">
+  <UPage class="mx-auto max-w-5xl px-4 py-8 relative">
     <template #left>
       <UAside :links="sidebarLinks" />
     </template>
@@ -49,7 +49,7 @@ const { data: posts } = await useAsyncData('posts', () => queryContent()
       size="sm"
       show-last
       show-first
-      class="relative mt-8"
+      class="mt-8"
     />
   </UPage>
 </template>

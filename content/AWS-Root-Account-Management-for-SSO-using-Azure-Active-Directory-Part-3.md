@@ -24,9 +24,9 @@ This is the third and final part of the series, that covers the API and deployme
 
 This is a multi part post - you can find all related posts here:
 
-* [Part 1 - Problem, Architecture, next steps](/aws-root-account-management-for-sso-using-azure-active-directory-part-1/)
-* [Part 2 - Shared Mailboxes](/aws-root-account-management-for-sso-using-azure-active-directory-part-2/)
-* Part 3 - API (You are here)
+- [Part 1 - Problem, Architecture, next steps](/aws-root-account-management-for-sso-using-azure-active-directory-part-1)
+- [Part 2 - Shared Mailboxes](/aws-root-account-management-for-sso-using-azure-active-directory-part-2)
+- Part 3 - API (You are here)
 
 ## API
 
@@ -66,7 +66,9 @@ $uri = 'https://<function_name>.azurewebsites.net/api/getAwsRootAccount?code=<au
 $response = Invoke-WebRequest -Method Get -Uri $uri
 Write-Output $response.content
 ```
+
 ### newAwsRootAccount
+
 ```powershell
 $uri = 'https://<function_name>.azurewebsites.net/api/newAwsRootAccount?code=<auth code>'
 $body = @{
@@ -79,6 +81,7 @@ Write-Output $response.content
 ```
 
 ### updateAwsRootAccount
+
 ```powershell
 $uri = 'https://<function_name>.azurewebsites.net/api/updateAwsRootAccount?code=<auth code>'
 $body = @{
@@ -92,6 +95,7 @@ Write-Output $response.content
 ```
 
 ### deleteAwsRootAccount
+
 ```powershell
 $uri = 'https://<function_name>.azurewebsites.net/api/deleteAwsRootAccount?code=<auth code>'
 $body = @{
@@ -104,8 +108,10 @@ Write-Output $response.content
 ```
 
 ## Deployment
+
 Some of you might have already spotted it, there are some pipelines includes in the repo in the [**.azuredevops**](https://github.com/chrburmeister/aws-root-user-management-api/tree/main/.azuredevops) folder. They are written for Azure Pipelines, and I would suggest you give them a go.
 If you want to learn more about those pipelines, I would suggest a previous [post](https://itinsights.org/Terraform-Ecosystem-Pipelines/), they are all explained in further detail over there :wink:
 
 ## Conclusion
+
 With this, your AWS team can manage all e-mail related tasks their own and your IT department has no worries for this. And If you run out of aliases, just create another shared mailbox using the script and you are good to go.

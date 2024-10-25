@@ -20,11 +20,13 @@ Retrieving a list of all Azure AD role assignments sounds easy enough, right? We
 <!-- toc -->
 
 # Introduction
+
 Unfortunately, its not straight forward, to get list of all Azure AD role assignments, unless you are not using Privileged Identity Management (PIM).
 First, we need the Microsoft Graph PowerShell SDK. Follow these [steps](https://learn.microsoft.com/en-us/powershell/microsoftgraph/installation?view=graph-powershell-1.0).
 Currently, to retrieve eligible, its required to set the Microsoft Graph profile to **beta**. Also, those information can only be queried using the Windpws PowerShell.
 
 # Script
+
 The gist can either be found [here](https://gist.github.com/chrburmeister/3376c8fc4afd24c01129d7dfbb42dad0) or explained in detail below.
 
 ```powershell

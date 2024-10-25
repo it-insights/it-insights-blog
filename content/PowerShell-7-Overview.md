@@ -9,7 +9,6 @@ author: Christoph Burmeister
 date: 2019-10-07 05:00:00
 ---
 
-
 On the 5th of April 2019, [Steve Lee](https://twitter.com/Steve_MSFT) announced two things, the general availability of PowerShell Core 6.2 and the the next major version, PowerShell 7.
 In this post we will keep track of the changes in PowerShell 7 and will provide an overview of the new lifecycle management.
 
@@ -107,7 +106,7 @@ The only application that comes to my mind, which still uses Workflows today is 
 
 With PowerShell 7, ForEach-Object Parallel is now available without the involvement of Workflows.
 
-```js [wurst. ps1]
+```powershell [parallel.ps1]
 1..10 | ForEach-Object -Parallel { Write-Output $_}
 ```
 

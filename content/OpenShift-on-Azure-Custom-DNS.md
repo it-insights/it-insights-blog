@@ -16,6 +16,7 @@ date: 2019-03-03 21:02:00
 If you are using RedHat OpenShift on Azure as your container platform, you are most likely using Azure DNS to resolve names of your cluster nodes – at least when you deployed it using the [ARM-Template](https://github.com/Microsoft/openshift-container-platform) provided by Microsoft with Azure as the OpenShift cloud provider instead of an “Bare-Metal” installation on Azure VMs without an cloud provider config.
 
 <!-- more -->
+
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
 Disclaimer:
 The explained scenario down below is currently not officially supported by RedHat and you should be very careful if you use it in a production grade environment because it may impact applications on your Cluster.

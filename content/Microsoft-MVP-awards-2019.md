@@ -13,7 +13,9 @@ category:
 ---
 
 On July 1st, Microsoft is honoring community work with the Most Valuable Professional (MVP) title all over the world. This years renewal cycle held some big surprises for us.
+
 <!-- more -->
+
 First, [Jan-Henrik](https://twitter.com/JanDamaschke) was renewed for his 4th time as an Microsoft Azure MVP. Additionally, to our great delight, [Christoph](https://twitter.com/chrburmeister) earned his first MVP Award as MVP in Cloud and Datacenter Management. Congratulations!
 
 That means that the three of us now combine 2 MCT, several MCSE and 2 MVP titles.

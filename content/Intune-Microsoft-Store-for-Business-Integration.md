@@ -18,6 +18,7 @@ date: 2022-01-30 05:00:00
 ## Introduction
 
 To distribute Microsoft Store Apps in the company, it is recommended to use the Microsoft Store for Business. This allows you to set up your own business store based on Microsoft (and sideload) apps.
+
 <!-- more -->
 
 ## Connector Integration

@@ -24,7 +24,7 @@ The Ecosystem surrounding Terraform is growing every day. Some of the tools have
 ## Introduction
 
 This is an quick overview for some tool you should check out, when you want to work properly with Terraform.
-Terraform has sparked an entire ecosystem of other tools to make your life better. Terraform itself has some testing integrated, even if its not the greatest, better than nothing, right? *terraform fmt* formats your code, *terraform validate* checks for invalid configurations. If you want to do more, you have come to the right place.
+Terraform has sparked an entire ecosystem of other tools to make your life better. Terraform itself has some testing integrated, even if its not the greatest, better than nothing, right? _terraform fmt_ formats your code, _terraform validate_ checks for invalid configurations. If you want to do more, you have come to the right place.
 
 ## TL;DR
 

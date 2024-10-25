@@ -35,11 +35,12 @@ date: 2019-09-23 05:00:00
 ---
 
 In situations like mergers, Office 365 tenants often have to be consolidated or migrated. Du to different companies having different requirements to compliance or governance standards. I would like to share my personal experiences in with the Quest's on Demand Migration utilities.
+
 <!-- more -->
 
 First of all, why Quest on Demand? There are many capable Office 365 migration tools available on the market. Quest on Demand Migration is a rather new product on the market that focuses on identity, mail and OneDrive migration and is an SaaS (Software as a Service) product that also uses Microsoft Azure AD as identity provider for registration.
 
-Anyone can create a demo account at Quest and configure the tool without having to deposit credit cards or other payment methods. The Quest on Demand trial version is limited  on the objects to be migrated (OneDrive 5 Files or 100MB, Exchange 10 Objects). This allows you to configure the tool in the trial version and already test the migration / synchronization. The other advantage is that one can continue to use his Quest On Demand Tenant after purchasing licenses without loosing settings or customizations. There is still some room for improvement here, as licenses can only be booked in via Quest and other distributors (offers, orders). In a modern SaaS application this should be directly automated within the order process and installed in real time using shopping carts or similar. However, the way via Quest and the other distributors worked without any problems.
+Anyone can create a demo account at Quest and configure the tool without having to deposit credit cards or other payment methods. The Quest on Demand trial version is limited on the objects to be migrated (OneDrive 5 Files or 100MB, Exchange 10 Objects). This allows you to configure the tool in the trial version and already test the migration / synchronization. The other advantage is that one can continue to use his Quest On Demand Tenant after purchasing licenses without loosing settings or customizations. There is still some room for improvement here, as licenses can only be booked in via Quest and other distributors (offers, orders). In a modern SaaS application this should be directly automated within the order process and installed in real time using shopping carts or similar. However, the way via Quest and the other distributors worked without any problems.
 
 ## Quest on Demand migration
 

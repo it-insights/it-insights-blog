@@ -29,8 +29,8 @@ keywords:
 date: 2019-08-19 05:00:00
 ---
 
+Sometimes multiple external IP address on an Azure Virtual Machine (VM) are needed for a deployed application or script. We will setup a multi NIC VM with one public IP per interface and route some traffic through different interfaces.
 
-Sometimes multiple external IP address on an Azure Virtual Machine (VM) are needed for a deployed application or script. We will setup a multi NIC VM with one public IP per interface and route some traffic through different interfaces.  
 <!-- more -->
 <!-- toc -->
 
@@ -38,22 +38,22 @@ Sometimes multiple external IP address on an Azure Virtual Machine (VM) are need
 
 Azure has support for multiple network interface cards (NICs) as well as multiple public IP address resources for quite some time now. The number of NICs that can be attached to a VM depends on the SKU aka size aka badge of the VM. As we will deploy a template with 4 NICs, we will use a DS3v2 from the DSv2-series, as this is one of the sizes, where you can attach 4 NICs to a VM with 4 cores and have enough compute power. The limitations regarding the number of NICs are listed on the Microsoft Docs for the corresponding SKU, here are the ones for the DSv2-series:
 
-| Size | vCPU | Memory: GiB | ... | Max NICs / Expected network bandwidth (Mbps) |
-| --- | --- | --- | --- | --- |
-| Standard_DS1_v2 |1 |3.5 | ... |2 / 750 |
-| Standard_DS2_v2 |2 |7 | ... |2 / 1500 |
-| Standard_DS3_v2 |4 |14 | ... |4 / 3000 |
-| Standard_DS4_v2 |8 |28 | ... |8 / 6000 |
-| Standard_DS5_v2 |16 |56 | ... |8 / 12000 |
+| Size            | vCPU | Memory: GiB | ... | Max NICs / Expected network bandwidth (Mbps) |
+| --------------- | ---- | ----------- | --- | -------------------------------------------- |
+| Standard_DS1_v2 | 1    | 3.5         | ... | 2 / 750                                      |
+| Standard_DS2_v2 | 2    | 7           | ... | 2 / 1500                                     |
+| Standard_DS3_v2 | 4    | 14          | ... | 4 / 3000                                     |
+| Standard_DS4_v2 | 8    | 28          | ... | 8 / 6000                                     |
+| Standard_DS5_v2 | 16   | 56          | ... | 8 / 12000                                    |
 
 ## Arm Template
 
 We will create the following resources using our ARM template:
 
-* A new VNET (you can of course use your own existing one, just see the [ARM quickstart repo](https://github.com/Azure/azure-quickstart-templates) for references)
-* n public IP addresses
-* n network interface
-* A virtual machine that uses all the above resources
+- A new VNET (you can of course use your own existing one, just see the [ARM quickstart repo](https://github.com/Azure/azure-quickstart-templates) for references)
+- n public IP addresses
+- n network interface
+- A virtual machine that uses all the above resources
 
 ### Parameters
 
@@ -104,7 +104,8 @@ Let's start with the basics. We need some parameters and some variables. For the
         "description": "Numbers of NICs and PIPs to be deployed."
       }
     }
-  },
+  }
+}
 ```
 
 ### Variables
@@ -122,7 +123,8 @@ The variables are quite simplistic. We create the name of the VNET from the `vmN
     "version": "19.04.201907241",
     "vnetPrefix": "10.0.0.0/24",
     "subnetPrefix": "10.0.0.0/24"
-  },
+  }
+}
 ```
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
@@ -134,23 +136,22 @@ If you want to know how to find the designated version or offer, [Azure Docs has
 As we want to be able to change how many NICs are deployed, we will use the [`copy` object of ARM templates](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-create-multiple#resource-iteration). This object helps us to deploy multiple instances of a specific resource without duplicating the resource block. A resource, using the `copy` property looks like this:
 
 ```json
-  {
-    "apiVersion": "2015-06-15",
-    "type": "Microsoft.Network/publicIPAddresses",
-    "name": "[concat(parameters('vmName'), copyIndex(), '-pip')]",
-    "location": "[parameters('location')]",
-    "dependsOn": [
-      "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
-    ],
-    "copy": {
-      "name": "proxyVmPipCopy",
-      "count": "[parameters('nicCount')]"
-    },
-    "properties": {
-      "publicIPAllocationMethod": "Static"
-    }
+{
+  "apiVersion": "2015-06-15",
+  "type": "Microsoft.Network/publicIPAddresses",
+  "name": "[concat(parameters('vmName'), copyIndex(), '-pip')]",
+  "location": "[parameters('location')]",
+  "dependsOn": [
+    "[concat('Microsoft.Network/virtualNetworks/', variables('virtualNetworkName'))]"
+  ],
+  "copy": {
+    "name": "proxyVmPipCopy",
+    "count": "[parameters('nicCount')]"
   },
-...
+  "properties": {
+    "publicIPAllocationMethod": "Static"
+  }
+}
 ```
 
 Here, we use the `copyIndex()` function to access the current index of enumeration to generate the name of the public IP address.
@@ -159,6 +160,7 @@ We will use resource iteration with the copy object for public IP addresses and 
 In the below example, we use the `copyIndex()` function to generate the `ipConfigurations` property for the NICs.
 
 ```json
+{
   "properties": {
     "ipConfigurations": [
       {
@@ -176,6 +178,7 @@ In the below example, we use the `copyIndex()` function to generate the `ipConfi
       }
     ]
   }
+}
 ```
 
 With multiple NICs attached to a VM, there has to be one network interface that is marked as primary. To take this into consideration, we compare the current `copyIndex` with 0 and if the index is greater than 0, the value is set to true. In other words, the first NIC is the primary one, all following will be set as secondary.
@@ -186,6 +189,7 @@ The copy object becomes really useful, when used at a property level. So if we w
 There is just one very important difference, we have to create a new "nested" copy object and refence to it by using the name as a parameter in the `copyIndex()` function.
 
 ```json
+{
   "networkProfile": {
     "copy": [{
       "name": "networkInterfaces",
@@ -198,6 +202,7 @@ There is just one very important difference, we have to create a new "nested" co
       }
     }]
   }
+}
 ```
 
 In line 2 we create a new copy object, but this time as an array object. The parameters `name` and `count` are the same as before and in addition the `input` property contains the block of ARM code that needs to be iterated.
@@ -235,7 +240,7 @@ After a VM restart, the routes will reset. To persist the routes, add them to th
 
 Now let's see, if all external interfaces are operational by using curl and ipify.org to determine our current external ip address:
 
-```
+```bash
 root@vmAdm:/home/vmAdm# curl --interface eth0 api.ipify.org?format=json -w "\n"
 {"ip":"40.113.151.139"}
 root@vmAdm:/home/vmAdm# curl --interface eth1 api.ipify.org?format=json -w "\n"

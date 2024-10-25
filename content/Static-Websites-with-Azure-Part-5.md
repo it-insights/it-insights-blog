@@ -19,6 +19,7 @@ date: 2019-07-27 09:00:00
 ---
 
 Learn how to redirect custom domain traffic for HTTP and HTTPS (with free valid certificate) to another domain with Azure Functions.
+
 <!-- excerpt -->
 
 ::blogImage{src="posts/static-websites-with-azure-part-5/less.jpg" alt="ServerLess"}
@@ -32,11 +33,11 @@ Learn how to redirect custom domain traffic for HTTP and HTTPS (with free valid 
 
 This is a multi part article with the following parts:
 
-* [Part 1 - Static site generators](/static-websites-with-azure-part-1/)
-* [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2/)
-* [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3/)
-* [Part 4 - Configure Azure CDN for static websites](/static-websites-with-azure-part-4/)
-* Part 5 - Configure Azure Function App for root domain redirection (You are here)
+- [Part 1 - Static site generators](/static-websites-with-azure-part-1)
+- [Part 2 - Setup Azure Storage Account for static websites](/static-websites-with-azure-part-2)
+- [Part 3 - Setup Azure DNS for static websites](/static-websites-with-azure-part-3)
+- [Part 4 - Configure Azure CDN for static websites](/static-websites-with-azure-part-4)
+- Part 5 - Configure Azure Function App for root domain redirection (You are here)
 
 In this part we will implement an Azure Function to redirect traffic from the root of our staticwebsite.de domain to the `www.staticwebsite.de` domain. Then we will use Azure Function proxies and the Let's Encrypt extension in combination with a PowerShell function to get a free SSL certificate.
 
@@ -44,13 +45,13 @@ In this part we will implement an Azure Function to redirect traffic from the ro
 
 ## Introduction
 
-As explained in [part 4](/static-websites-with-azure-part-4/), it is currently not possible to add root domains like `staticwebsite.de` as a custom domain to Azure CDN. So we need a way to forward traffic to the www subdomain and still provide SSL support to satisfy the requirements for hsts preloading.
+As explained in [part 4](/static-websites-with-azure-part-4), it is currently not possible to add root domains like `staticwebsite.de` as a custom domain to Azure CDN. So we need a way to forward traffic to the www subdomain and still provide SSL support to satisfy the requirements for hsts preloading.
 I had the following ideas:
 
-* Use the rule engine of Azure CDN in Verizon Premium tier to send 301 replies - *Does not work, as there is currently no way to add root domains to Azure CDN. None of the known workarounds work anymore.*
-* Use a function App with consumption plan to return a 301 HTTP status code - *Would work*
-* Use function App with app service plan - *Would work.*
-* App Service with smallest App service plan with SSL support - *Would work*
+- Use the rule engine of Azure CDN in Verizon Premium tier to send 301 replies - _Does not work, as there is currently no way to add root domains to Azure CDN. None of the known workarounds work anymore._
+- Use a function App with consumption plan to return a 301 HTTP status code - _Would work_
+- Use function App with app service plan - _Would work._
+- App Service with smallest App service plan with SSL support - _Would work_
 
 I chose the Function App, as it is the cheapest variant and I wanted to test and implement let's encrypt with a PowerShell Function for a long time.
 
@@ -88,13 +89,13 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 
 ### Map custom domain
 
-Regarding to the documentation, it is necessary to add a CNAME for our custom domain. As explained in [part 3](/static-websites-with-azure-part-3/), this is not possible for root domain (it's why we are doing this in the first place :wink:), but with a little trickery we can use another validation method to add our custom domain. If we add our custom domain, the function app IP is shown in the portal. We have to create a A record for `@` pointing to this IP. After clicking validate, the portal will tell us that only CNAME is supported for custom domain validation, but will show us the necessary TXT record, if we choose TXT based validation from the dropdown.
+Regarding to the documentation, it is necessary to add a CNAME for our custom domain. As explained in [part 3](/static-websites-with-azure-part-3), this is not possible for root domain (it's why we are doing this in the first place :wink:), but with a little trickery we can use another validation method to add our custom domain. If we add our custom domain, the function app IP is shown in the portal. We have to create a A record for `@` pointing to this IP. After clicking validate, the portal will tell us that only CNAME is supported for custom domain validation, but will show us the necessary TXT record, if we choose TXT based validation from the dropdown.
 
-DNS entry | type | value
----|---|---
-www.staticwebsite.de | CNAME | staticwebsitede.azureedge.net
-@ | A | (FunctionAppIp)
-@ | TXT | (FunctionAppUrl)
+| DNS entry              | type  | value                         |
+| ---------------------- | ----- | ----------------------------- |
+| `www.staticwebsite.de` | CNAME | staticwebsitede.azureedge.net |
+| @                      | A     | (FunctionAppIp)               |
+| @                      | TXT   | (FunctionAppUrl)              |
 
 The trick is to click validate again and then switch back to CNAME. Now the custom domain has successful been added to the function app.
 
@@ -160,7 +161,7 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 })
 ```
 
-### Proxy configuration
+### Lets Encrypt configuration
 
 Next we need to define a route for the so called "HTTP-01" ACME challenge. As it is a fixed defined path, we have to route traffic to the path `http://{YOUR_DOMAIN}/.well-known/acme-challenge/{TOKEN}` directly to our reply function. Read more about how letsencrypt validation works from the [Challenge Types Documentation](https://letsencrypt.org/docs/challenge-types/).
 

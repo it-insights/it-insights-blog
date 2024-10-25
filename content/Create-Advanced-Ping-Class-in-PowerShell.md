@@ -12,6 +12,7 @@ category:
 ---
 
 Recently, I had the problem of monitoring the latency of my internet connection to provide these information to my ISP for troubleshooting. As the standard ping class in .net and Test-NetConnection was too inflexible and had no timestamps, I wanted to create a PowerShell Script to provide these functionality. Classes were something I haven't used in a while so I chose to create a PowerShell class called `AdvancedPing`.
+
 <!-- more -->
 <!-- toc -->
 
@@ -24,7 +25,7 @@ Some good resources to get familiar with PowerShell Classes are
 - [about_classes from Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_classes?view=powershell-6)
 - [PowerShell User Group Video about PowerShell Classes](https://www.youtube.com/watch?v=gkwyhUc-xRQ)
 - [Github repository for the above video](https://github.com/SAPIENTechnologies/ClassOfWine)
-::
+  ::
 
 Lets start with what we want to achieve. We want to create a ping class that is capable of adjusting the following settings for ICMP packets:
 
@@ -114,8 +115,8 @@ The `_SendPing` method takes the already created instances in `$pinger`, `$pingO
 {% ghcode <https://gist.github.com/itpropro/28be683c04e3246e80b01259e72aead7> 66 87 {lang:PowerShell} %}
 
 All that already happens in line 68..
-The following conditional statements evaluates how the "$_timestamp" switch is configured and adjusts the `$message` variable accordingly.
-If the ICMP message times out, a simple `"Request timed out"` will be written to console.
+The following conditional statements evaluates how the "$_timestamp" switch is configured and adjusts the `$message`variable accordingly.
+If the ICMP message times out, a simple`"Request timed out"` will be written to console.
 
 ## Examples
 

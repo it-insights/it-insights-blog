@@ -17,7 +17,9 @@ category:
 ---
 
 Once every year, all the worldwide Azure communities come together to the Global Azure Bootcamp. This year on April 27th it's the sixth time and we are proud to be part of it the fourth time in a row!
+
 <!-- excerpt -->
+
 [image center logo-2019-500x445.png](https://eventleaf.com/gab19)
 
 Once every year, all the worldwide Azure communities come together to the Global Azure Bootcamp. This year on April 27th it's the sixth time and we are proud to be part of it the fourth time in a row!

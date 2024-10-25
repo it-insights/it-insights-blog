@@ -26,9 +26,11 @@ Some resources in Terraform allow to pass them a list if multiple values can be 
 <!-- toc -->
 
 # Introduction
+
 Using the dynamic-block can be a little much at first, because its an advanced topic. However, you have gotten use to it, its a blast to work with.
 
 # Usage
+
 As shown in the [Azure Vnet](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/virtual_network#example-usage) resource shown below, each subnet requires its own subnet block.
 
 ```powershell
@@ -53,6 +55,7 @@ resource "azurerm_virtual_network" "vnet" {
 ```
 
 Using the dynamic-block, you can write a module to create, in this case Azure Virtual Networks (Vnet) including their subnet config and provide the subnets as a list.
+
 ```powershell
 # variables
 variable "subnet" {
@@ -186,7 +189,6 @@ variable "network_rule_collection" {
     }
   }
 }
-
 ```
 
 As you can see in the application_rule_collection setion, there are three nested level of the dynmic-block and there is no limit on how many you can nest together.

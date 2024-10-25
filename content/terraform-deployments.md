@@ -14,13 +14,13 @@ author: Christoph Burmeister
 date: 2022-01-21 05:45:00
 ---
 
-
 Using Terraform has become mainstream at this point and I would like to share with you, how I like to structure my deployments.
 
 <!-- more -->
 <!-- toc -->
 
 ## Introduction
+
 When you write Terraform deployments, you have a specific goal. However, you might want to reuse code you wrote previously and this is where modules comes into play.
 Modules play a big role if you want to become more efficient and create new deployments faster.
 The goal is to create one generalized deployments, that can be used to deploy several environments.
@@ -32,14 +32,17 @@ This is not a Terraform tutorial and it will not explain how Terraform works.
 ::
 
 ## TL;DR
+
 Check out my [terraform](https://github.com/chrburmeister/terraform) repository on GitHub.
 
 ## General Files
+
 In your repo, create a folder called **terraform**.
 This is the base for everything about your deployment.
 I then proceed by creating separate files for all general information about the deployment (valid for any environment):
 
 ### providers.tf
+
 providers.tf contains the entire configurations of all necessary Terraform providers:
 
 ```powershell
@@ -53,6 +56,7 @@ provider "azurerm" {
 ```
 
 ### versions.tf
+
 versions.tf contains all provider versions:
 
 ```powershell
@@ -69,6 +73,7 @@ terraform {
 ```
 
 ### backends.tf
+
 backends.tf is where all backends are configured:
 
 ```powershell
@@ -78,6 +83,7 @@ terraform {
 ```
 
 ### variables.tf
+
 At this point, you might have guessed it, variables.tf contains all necessary variables of the deployment:
 
 ```powershell
@@ -97,6 +103,7 @@ variable "subscription_id" {
 ```
 
 ### main.tf
+
 Last but not least, the main.tf is where it all comes together. From here, I call either my resource- or service modules.
 One addition, I like to create a local section right in the root of the file to define all resource names. I then add an environment name in the .tfvars-file:
 
@@ -109,9 +116,11 @@ locals {
 ```
 
 ## Environment Specific Files
+
 Environment specific files must be created for each environment you want to deploy.
 
 ### env_\<env name\>.sec.tfvars
+
 Contains all secrets for interacting with the specified providers.
 
 ```powershell
@@ -120,6 +129,7 @@ client_secret = ""
 ```
 
 ### env_\<env name\>_backend.sec.tfvars
+
 Contains all secrets for interacting with the specified backends.
 
 ```powershell
@@ -131,23 +141,28 @@ access_key           = ""
 ```
 
 ### env_\<env name\>.tfvars
+
 Contains all variables (except secrets and backend-config)
 
 ## Folders
+
 Within the terraform folder, create the following folders:
 
 ### modules
+
 Modules in Terraform make it easy to reuse code you wrote before and to share them with your colleagues.
 
 The modules folder contains the following two sub-folders:
 
 #### resource_modules
+
 Resource modules represent one resource and one resource only.
 Simplicity is key.
 However, there are some exceptions, for example: when you provision a key vault and you want to deploy secrets to this very key vault within the same deployment.
 For this, it would be ok to add an access policy for your terraform service principal in the same resource module - at least as far as I am concerned.
 
 #### service_modules
+
 Service modules describe a set of resources to represent a final service.
 One example would be a basic virtual machine, because it consists at least of three resources:
 
@@ -159,6 +174,7 @@ In this scenario, we would have three resouce modules for the above described re
 The service module is being called from the main.tf.
 
 ## Overview
+
 To visualize all this better, the following chart shows how it all works
 
 ::blogImage{src="posts/terraform-deployments/files_folders.png" alt="Files and Folders Overview"}
@@ -167,6 +183,7 @@ To visualize all this better, the following chart shows how it all works
 ## Other Files
 
 ### .gitignore
+
 GitHub has a default terraform .gitignore-file, that needs to be extended by a few files.
 
 ```powershell

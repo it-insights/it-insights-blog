@@ -10,6 +10,7 @@ date: 2019-02-18 00:05:00
 
 During an Exchange online migration, some preparations must take plce in advance so users can be migrated easily to the cloud.
 A typical error in the mailbox migration process occurs because of the mail domain (property: smtp/proxyaddresses) with the message "Target mailbox doesn't have an smtp proxy".
+
 <!-- more -->
 
 First thing in the troubleshooting process is to check whether the mail domains for the users are also configured properly in the Office 365 tenant settings and whether the respective DNS entries and verification checks have been performed.

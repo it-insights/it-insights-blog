@@ -30,6 +30,7 @@ date: 2022-03-28 05:45:00
 ---
 
 Azure Kubernetes Services (AKS) and Azure Data Explorer (ADX) clusters are SaaS offerings based on virtual machines. It is probably the oldest way to safe money in the cloud - just turn them off when you do not need them - here are two ways to do this.
+
 <!-- more -->
 <!-- toc -->
 

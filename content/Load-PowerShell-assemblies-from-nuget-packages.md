@@ -13,7 +13,9 @@ tags:
 ---
 
 PowerShell can manage NuGet packages since a few years now, but loading a dll, which is part of a installed NuGet package in PowerShell is not that intuitive.
+
 <!-- more -->
+
 I wanted to directly use the `Microsoft.Azure.Cosmos.Table` package from NuGet. You could also use the `AzTable` module, but if you want to use the most current Version of the underlying dll's (if they are even completely loaded from the PowerShell module) or if there is no module available that loads that specific nuget package (e.g. [SSH.NET](https://www.nuget.org/packages/SSH.NET)), you have to install them manually.
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}

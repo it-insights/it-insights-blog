@@ -6,14 +6,13 @@ const limit = ref(7)
 const skip = computed(() => (page.value - 1) * limit.value)
 const count = await queryContent().count()
 const { sidebarLinks } = useSocialLinks()
-const { data: posts } = await useAsyncData('posts', () => queryContent()
+const { data: indexPosts } = await useAsyncData('index-posts', () => queryContent()
   .where({ _extension: 'md', author: { $ne: 'itinsights' } })
   .sort({ date: -1 })
   .skip(skip.value)
   .limit(limit.value)
-  .find(), {
-  watch: [page],
-})
+  .find()
+)
 
 // SEO
 useSeoMeta({
@@ -26,13 +25,13 @@ useSeoMeta({
 </script>
 
 <template>
-  <UPage class="mx-auto max-w-5xl px-4 py-8">
+  <UPage class="relative mx-auto max-w-5xl px-4 py-8">
     <template #left>
       <UAside :links="sidebarLinks" />
     </template>
     <UBlogList orientation="horizontal" :ui="{ wrapper: 'lg:grid-cols-4' }">
       <UBlogPost
-        v-for="(post, index) in posts"
+        v-for="(post, index) in indexPosts"
         :key="index"
         :to="post._path"
         :title="post.title"
@@ -60,7 +59,7 @@ useSeoMeta({
       size="sm"
       show-last
       show-first
-      class="relative mt-8"
+      class="mt-8"
     />
   </UPage>
 </template>

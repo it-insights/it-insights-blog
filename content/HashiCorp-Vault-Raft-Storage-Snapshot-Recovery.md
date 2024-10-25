@@ -21,8 +21,8 @@ HashiCorp introcuded with Vault version 1.2 a new integrated Storage backend. It
 
 The integrated storage backend of HashiCorp Vault is based on the Raft Consensus Algorithm. Since this post aims to provide practical technical guidance on recovering HashiCorp Vault's storage implementation, where replication is based , im not going into the details about the Raft consensus algorithm itself. The following links may provide some insights on this topic.
 
-* [raft.github.io](https://raft.github.io) - Official source
-* [hashicorp/raft](https://github.com/hashicorp/raft) - HashiCorp Implementation
+- [raft.github.io](https://raft.github.io) - Official source
+- [hashicorp/raft](https://github.com/hashicorp/raft) - HashiCorp Implementation
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
 Some familiarity with basic HashiCorp Vault concepts are assumed.
@@ -42,21 +42,21 @@ Snapshot functionality is not supported when Raft is used only for high availabi
 
 In my case, i installed two HashiCorp Vault instances into an Azure Kubernetes Cluster using the [Vault Helm](https://github.com/hashicorp/vault-helm) chart. The values.yaml for these installations can be found [here](https://gist.github.com/rooftop90/7096dc46d0a4157d2977284e9a41a762).
 
-* Vault Instance A - Name: vault
+- Vault Instance A - Name: vault
 
 ::blogImage{src="posts/hashicorp-vault-raft-storage-snapshot-recovery/2.png" alt="Vault Instance A; Name: vault"}
 ::
 
-* Vault Instance B - Name: vault-dev
+- Vault Instance B - Name: vault-dev
 
 ::blogImage{src="posts/hashicorp-vault-raft-storage-snapshot-recovery/3.png" alt="Vault Instance B; Name: vault-dev"}
 ::
 
 Demo Secrets are written to the kv-v2 secret engine in the Vault instance A. We will demonstrate the recovery of these secrets to Vault instance B. The secrets are stored as follows:
 
-* secret/frontent/* -> secrets that are used by a frontend application
-* secret/backend/* -> secrets that are used by a backend application
-* secret/environment/* -> secrets that are used for defining an environment
+- secret/frontent/* -> secrets that are used by a frontend application
+- secret/backend/* -> secrets that are used by a backend application
+- secret/environment/* -> secrets that are used for defining an environment
 
 ## Creating Raft storage snapshot
 
@@ -124,6 +124,7 @@ All secrets that were present in instance A are now present in instance B. The r
 ::callout{icon="i-heroicons-information-circle" color="blue"}
 Recovering an instance with an earlier snapshot of the same instance doesn't require you to unseal the instance after the restore as the unseal keys are matching!
 ::
+
 ## Summary
 
 This post shows how effective HashiCorp Vault Raft storage recovery really is and only shows the tip of the iceberg of what is possible with this integrated storage option. Since the introduction HashiCorp has made numerous improvements to the integrated storage backend and continues to do so with the focus on easing operational aspects of Vault.

@@ -73,13 +73,13 @@ As the placeholders are calculated using [nunjucks](https://mozilla.github.io/nu
 There is one more add-in that we have to mention when talking about officeatwork template management. Content Chooser let's you manage your content in the same way as you manage your templates. That means that you can store pictures in several formats, textblocks as txt and even full xml formatted text blocks like a table of content or a product description. These can then easily be inserted from inside of the current Office application with a similar interface to template chooser.
 Here are the supported content types that content chooser can manage:
 
-|  | DOCX | OOXML | TXT | HTML | PNG | JPG | GIF | BMP | SVG |
-|------------|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|:----:|
-| Word | X | X | X | X | X | X | X | X | X |
-| Excel |  |  | X |  | X | X | X | X | X |
-| PowerPoint |  |  | X |  | X | X | X | X | X |
-| OneNote |  |  | X |  | X | X | X | X |  |
-| Outlook |  |  | X | X |  |  |  |  |  |
+|            | DOCX | OOXML | TXT | HTML | PNG | JPG | GIF | BMP | SVG |
+| ---------- | :--: | :---: | :-: | :--: | :-: | :-: | :-: | :-: | :-: |
+| Word       |  X   |   X   |  X  |  X   |  X  |  X  |  X  |  X  |  X  |
+| Excel      |      |       |  X  |      |  X  |  X  |  X  |  X  |  X  |
+| PowerPoint |      |       |  X  |      |  X  |  X  |  X  |  X  |  X  |
+| OneNote    |      |       |  X  |      |  X  |  X  |  X  |  X  |     |
+| Outlook    |      |       |  X  |  X   |     |     |     |     |     |
 
 ## Summary
 
