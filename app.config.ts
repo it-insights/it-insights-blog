@@ -4,8 +4,8 @@ export default defineAppConfig({
       name: 'Jacob Meissner',
       picture: 'jacob-meissner.jpg',
       socials: {
-        twitter: 'jmeissner',
-        linkedIn: '123',
+        twitter: 'VisorianGmbh',
+        linkedIn: 'jacob-meißner-3799b6134',
       },
       company: {
         name: 'Visorian GmbH',
@@ -18,7 +18,7 @@ export default defineAppConfig({
       picture: 'jan-henrik-damaschke.jpg',
       socials: {
         twitter: 'jandamaschke',
-        linkedIn: 'jandamaschke',
+        linkedIn: 'jan-henrik-damaschke',
       },
       company: {
         name: 'Visorian GmbH',
@@ -30,13 +30,13 @@ export default defineAppConfig({
       name: 'Christoph Burmeister',
       picture: 'christoph-burmeister.jpg',
       socials: {
-        twitter: 'cburmeister',
-        linkedIn: '123',
+        twitter: 'chrburmeister',
+        linkedIn: 'chrburmeister',
       },
       company: {
-        name: 'b.telligent',
-        url: 'https://www.btelligent.com/',
-        position: 'Architect',
+        name: 'b.Berlin Bytes GmbH',
+        url: 'https://www.https://www.berlin-bytes.de/.com/',
+        position: 'Principal Solutions Architect',
       },
     },
     {
