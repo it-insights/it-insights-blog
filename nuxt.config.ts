@@ -73,6 +73,7 @@ export default defineNuxtConfig({
           format: 'webp',
           width: 500,
           height: 250,
+          sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw',
         },
       },
       blogLead: {
@@ -80,6 +81,7 @@ export default defineNuxtConfig({
           format: 'webp',
           width: 900,
           height: 450,
+          sizes: 'xs:100vw sm:100vw md:100vw lg:100vw xl:100vw',
         },
       },
     },
