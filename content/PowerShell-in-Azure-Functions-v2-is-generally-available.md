@@ -238,7 +238,7 @@ During the setup, a file share is created that holds all files:
 ::blogImage{src="posts/powershell-in-azure-functions-v2-is-generally-available/storageAccountFileShare.png" alt="Function App Storage Account - Data Share"}
 ::
 
-Use the [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer/) to access the share.
+Use the [Azure Storage Explorer](https://azure.microsoft.com/en-us/features/storage-explorer) to access the share.
 The profile can be found under '\<share\>/site/wwwroot/profile.ps1'
 
 ```powershell
@@ -279,4 +279,4 @@ Be aware, you need to follow the standard PowerShell Module folder structure:
 
 Now you have everything you need to know to get started with PowerShell in Azure Functions!
 
-You can checkout my previous posts: Azure Maintenance Functions [Part 1](https://itinsights.org/azure-maintenance-functions-part-1/) and [Part 2](https://itinsights.org/azure-maintenance-functions-part-1/).
+You can checkout my previous posts: Azure Maintenance Functions [Part 1](https://itinsights.org/azure-maintenance-functions-part-1/) and [Part 2](https://itinsights.org/azure-maintenance-functions-part-1).

@@ -59,7 +59,7 @@ The private GitHub registry stores some prebuild images we want to use/import in
 ## ACR tasks
 
 ACR tasks provide image building capabilities for Linux, Windows and ARM and can be used to automate recurring tasks like [OS and framework patching](https://docs.microsoft.com/en-us/azure/container-registry/container-registry-tasks-overview#automate-os-and-framework-patching)
-The first step for us is to create a build task that imports our image, pulls our GitHub repository as context and build a new image with the references base image and our Dockerfile. We are using the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/) to interact with our ACR.
+The first step for us is to create a build task that imports our image, pulls our GitHub repository as context and build a new image with the references base image and our Dockerfile. We are using the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure) to interact with our ACR.
 
 ```
 az acr task create --registry testacr --name YourApp --image YourApp:latest --context https://github.com/itpropro/acr-repo.git#main --file Dockerfile-YourApp

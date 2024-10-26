@@ -87,7 +87,7 @@ Next we add our custom domain "www.staticwebsite.de". In [part 3](/static-websit
 ```
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-There is a [workaround](https://arlanblogs.alvarnet.com/adding-a-root-domain-to-azure-cdn-endpoint/) for adding custom root domains with SSL support to Azure CDN. This workaround **does not work anymore**. Microsoft/Verizon updated their backend, probably for security reasons, and an error will be thrown, when trying to activate SSL. The only currently supported way to add SSL certificates to an apex domain is to use the "Use my own certificate" (Bring your own certificate) feature with Azure Key vault.
+There is a [workaround](https://arlanblogs.alvarnet.com/adding-a-root-domain-to-azure-cdn-endpoint) for adding custom root domains with SSL support to Azure CDN. This workaround **does not work anymore**. Microsoft/Verizon updated their backend, probably for security reasons, and an error will be thrown, when trying to activate SSL. The only currently supported way to add SSL certificates to an apex domain is to use the "Use my own certificate" (Bring your own certificate) feature with Azure Key vault.
 ::
 
 Next we activate SSL to get a CDN provided free SSL certificate that renews automatically(!)
@@ -137,7 +137,7 @@ To redirect traffic flowing over the CDN to the secure HTTPS endpoint, we have t
 
 We basically create a regular expression that matches in every request, coming through the CDN via HTTP and redirect it to `https://www.staticwebsite.de`, attaching everything after the forward slash from the origin to the redirected url.
 
-::blogImage{src="posts/static-websites-with-azure-part-4cdnhttps.png" alt="HTTPS rule"}
+::blogImage{src="posts/static-websites-with-azure-part-4/cdnhttps.png" alt="HTTPS rule"}
 ::
 
 ### Caching
@@ -157,7 +157,7 @@ These values differs from website to website depending on how frequently content
 
 ### HSTS header
 
-One of the requirements for our website to be listed on the [HTTP strict transport security (HSTS) preload list](https://hstspreload.org/) is to serve a valid `Strict-Transport-Security` header. We can do this by configuring the following rule in the rules engine.
+One of the requirements for our website to be listed on the [HTTP strict transport security (HSTS) preload list](https://hstspreload.org) is to serve a valid `Strict-Transport-Security` header. We can do this by configuring the following rule in the rules engine.
 
 ```xml
 <rule id="1111111" platform="http-large" status="pending" version="0" custid="XXXXX">
@@ -172,7 +172,7 @@ One of the requirements for our website to be listed on the [HTTP strict transpo
 
 Finally we configure compression for all content types on our CDN endpoint. Therefore we navigate to "HTTP Large -> Cache Settings -> Compression". We just copy the list of all supported content types, replace the line breaks with commas and paste that into the "File Types:" field and set the checkbox to "Compression Enabled".
 
-::blogImage{src="posts/static-websites-with-azure-part-4cdncompression.png" alt="CDN compression"}
+::blogImage{src="posts/static-websites-with-azure-part-4/cdncompression.png" alt="CDN compression"}
 ::
 
 We have configured our Azure CDN endpoint with a few basic rules and enabled gzip based compression for our website.

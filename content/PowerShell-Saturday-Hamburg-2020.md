@@ -43,7 +43,7 @@ The Presentations will be available in the next days - I will update the table a
 
 ## Sponsors
 
-Without our Sponsors, this Event would not have been possible. We would like to sent a big THANK YOU to [QSC AG](https://www.qsc.de/de/), [Aequitas Integration GmbH](https://aequitas-integration.de/) and [Visorian GmbH](https://www.visorian.com).
+Without our Sponsors, this Event would not have been possible. We would like to sent a big THANK YOU to [QSC AG](https://www.qsc.de/de/), [Aequitas Integration GmbH](https://aequitas-integration.de) and [Visorian GmbH](https://www.visorian.com).
 
 ## Thank You All
 

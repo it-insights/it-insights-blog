@@ -35,7 +35,7 @@ My main reasons against WordPress are:
 
 - Overhead for relative simple websites or blogs
 - You basically need a WordPress plugin for everything, if you don‘t want to write posts in pure HTML
-- Because of the amount of third party extensions, vulnerabilities are very common and therefore the operational overhead needed to keep all plugins up to date (not everything supports auto update). &nbsp;As [this current article by imperva](https://www.imperva.com/blog/the-state-of-web-application-vulnerabilities-in-2018/) shows, the number of WordPress vulnerabilities has tripled last year, whereby 98% of all vulnerabilities are actually third party WordPress modules.
+- Because of the amount of third party extensions, vulnerabilities are very common and therefore the operational overhead needed to keep all plugins up to date (not everything supports auto update). &nbsp;As [this current article by imperva](https://www.imperva.com/blog/the-state-of-web-application-vulnerabilities-in-2018) shows, the number of WordPress vulnerabilities has tripled last year, whereby 98% of all vulnerabilities are actually third party WordPress modules.
 - Backup is much more complicated than using a versioning system like git and doing a bare clone from another place from time to time as an additional backup.
 
 With this in mind, I came across static site generators. What they basically do is take some source files (normally MarkDown) and generate static HTML sites from these source files.
@@ -51,7 +51,7 @@ Some of the most used static site generators are:
 I chose Hexo, as I found a very active community. Also for customization, I would rather like to use JavaScript than Go or Ruby.
 As Next is a react framework and I don't have any prior knowledge to react, this was not an option.
 
-To get started with Hexo, just visit their [https://hexo.io/](https://hexo.io/) or the [https://github.com/hexojs/hexo](github repo).
+To get started with Hexo, just visit their [https://hexo.io/](https://hexo.io) or the [https://github.com/hexojs/hexo](github repo).
 
 I made a short recording, how to get started with hexo in under 30 seconds:
 
@@ -60,7 +60,7 @@ I made a short recording, how to get started with hexo in under 30 seconds:
 
 The most important hexo resources can be found here:
 
-- [hexo plugins](https://hexo.io/plugins/)
-- [hexo themes](https://hexo.io/themes/)
+- [hexo plugins](https://hexo.io/plugins)
+- [hexo themes](https://hexo.io/themes)
 
 See the next part to learn how to setup and configure a Azure Storage account for usage with static websites.

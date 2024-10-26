@@ -11,8 +11,7 @@ const { data: indexPosts } = await useAsyncData('index-posts', () => queryConten
   .sort({ date: -1 })
   .skip(skip.value)
   .limit(limit.value)
-  .find()
-)
+  .find())
 
 // SEO
 useSeoMeta({
@@ -56,6 +55,7 @@ useSeoMeta({
         path: page === 1 ? '/' : `/page/${page}`,
       })"
       :total="count"
+      :page-count="7"
       size="sm"
       show-last
       show-first

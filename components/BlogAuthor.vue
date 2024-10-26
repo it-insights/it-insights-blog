@@ -20,8 +20,8 @@ interface Author {
 const { author, page } = defineProps<{ page: Record<string, unknown>; author: Author }>()
 
 const socialLinks = computed(() => [
-  author.socials.twitter && { icon: 'i-simple-icons-x', label: author.socials.twitter, to: `https://x.com/${author.socials.twitter}`, target: '_blank' },
-  author.socials.linkedIn && { icon: 'i-simple-icons-linkedin', label: author.socials.linkedIn, to: `https://www.linkedin.com/in/${author.socials.linkedIn}`, target: '_blank' },
+  author.socials?.twitter && { icon: 'i-simple-icons-x', label: author.socials.twitter, to: `https://x.com/${author.socials.twitter}`, target: '_blank' },
+  author.socials?.linkedIn && { icon: 'i-simple-icons-linkedin', label: author.socials.linkedIn, to: `https://www.linkedin.com/in/${author.socials.linkedIn}`, target: '_blank' },
 ])
 </script>
 

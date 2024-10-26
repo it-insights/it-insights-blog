@@ -26,12 +26,12 @@ In the first part of the blog series, we took a look at the topic of planning an
 
 This is a multi part article with the following parts:
 
-- [Office 365 Tenant to Tenant Migration Fundamentals Part 1](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1/)
-- [Office 365 Tenant to Tenant Migration Identity Planning Part 2](https://itinsights.org/tenant-to-tenant-migration-identity-planning-part-2/)
+- [Office 365 Tenant to Tenant Migration Fundamentals Part 1](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1)
+- [Office 365 Tenant to Tenant Migration Identity Planning Part 2](https://itinsights.org/tenant-to-tenant-migration-identity-planning-part-2)
 
 This section is about the advanced view of migration scenarios, as there are many more indicators that have an impact on tenant migration. If we take a look at the topic of Office 365 tenant migration, in most cases there is an entire hybrid infrastructure. In this context of hybrid infrastructure there are key components like identity management, device management, exchange hybrid, data management & application management.
 
-These topics are individual sub-projects and should be analyzed, reviewed, and considered based on the strategy established in [Office 365 Tenant to Tenant Migration Fundamentals Part 1](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1/).
+These topics are individual sub-projects and should be analyzed, reviewed, and considered based on the strategy established in [Office 365 Tenant to Tenant Migration Fundamentals Part 1](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1).
 
 ## Identity Management
 

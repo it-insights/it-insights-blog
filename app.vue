@@ -73,6 +73,7 @@ useSeoMeta({
         icon="i-simple-icons-github"
         color="gray"
         variant="ghost"
+        alt="IT Insights GitHub"
       />
     </template>
 

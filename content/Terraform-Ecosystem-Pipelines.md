@@ -60,7 +60,7 @@ It consists of two stages - the first creates a terraform plan and checks, if ch
 
 ### [Terraform Docs](https://github.com/chrburmeister/terraform-pipelines/blob/main/.azuredevops/pipelines/create_terraform_docs.yml)
 
-To automatically create a docs.md for the root module as well as any other module, this pipeline uses [terraform-docs](https://terraform-docs.io/) to commit the documentation directly during the pipeline run. This pipeline is meant to be used as a build-validation pipeline for pull requests.
+To automatically create a docs.md for the root module as well as any other module, this pipeline uses [terraform-docs](https://terraform-docs.io) to commit the documentation directly during the pipeline run. This pipeline is meant to be used as a build-validation pipeline for pull requests.
 
 ### [terraform fmt](https://github.com/chrburmeister/terraform-pipelines/blob/main/.azuredevops/pipelines/post_commit_terraform_fmt.yml)
 

@@ -16,7 +16,7 @@ const { data: posts } = await useAsyncData(`page-${route.params.page}-posts`, ()
 </script>
 
 <template>
-  <UPage class="mx-auto max-w-5xl px-4 py-8 relative">
+  <UPage class="relative mx-auto max-w-5xl px-4 py-8">
     <template #left>
       <UAside :links="sidebarLinks" />
     </template>
@@ -46,6 +46,7 @@ const { data: posts } = await useAsyncData(`page-${route.params.page}-posts`, ()
         path: page === 1 ? '/' : `/page/${page}`,
       })"
       :total="count"
+      :page-count="6"
       size="sm"
       show-last
       show-first

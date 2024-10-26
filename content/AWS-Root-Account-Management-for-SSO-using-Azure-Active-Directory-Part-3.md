@@ -110,7 +110,7 @@ Write-Output $response.content
 ## Deployment
 
 Some of you might have already spotted it, there are some pipelines includes in the repo in the [**.azuredevops**](https://github.com/chrburmeister/aws-root-user-management-api/tree/main/.azuredevops) folder. They are written for Azure Pipelines, and I would suggest you give them a go.
-If you want to learn more about those pipelines, I would suggest a previous [post](https://itinsights.org/Terraform-Ecosystem-Pipelines/), they are all explained in further detail over there :wink:
+If you want to learn more about those pipelines, I would suggest a previous [post](https://itinsights.org/Terraform-Ecosystem-Pipelines), they are all explained in further detail over there :wink:
 
 ## Conclusion
 

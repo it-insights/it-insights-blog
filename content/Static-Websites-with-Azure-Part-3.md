@@ -80,7 +80,7 @@ We will use the www subdomain as the main website entry point. That means we hav
 | @                      | A     | (FunctionAppIp)               |
 | @                      | TXT   | (FunctionAppUrl)              |
 
-As you can see, we add a CNAME pointing to the later created CDN endpoint on the www subdomain. Unfortunately this is not possible for the root domain, as it would contradict to the DNS RFC. This [ISC Blogpost](https://www.isc.org/blogs/cname-at-the-apex-of-a-zone/) explains in detail, why you cannot create CNAME entries in the zone apex.
+As you can see, we add a CNAME pointing to the later created CDN endpoint on the www subdomain. Unfortunately this is not possible for the root domain, as it would contradict to the DNS RFC. This [ISC Blogpost](https://www.isc.org/blogs/cname-at-the-apex-of-a-zone) explains in detail, why you cannot create CNAME entries in the zone apex.
 The two `@` entries are reserved for later. We will create a Azure Function to forward traffic from the root domain to www in [part 5](/static-websites-with-azure-part-5).
 
 See the next part to learn how to setup the Azure CDN, get a free SSL certificate and use the Verizon rules engine.

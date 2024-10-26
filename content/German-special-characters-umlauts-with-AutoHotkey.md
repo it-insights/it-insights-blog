@@ -23,7 +23,7 @@ For me the best solution was an AutoHotkey script. AutoHotkey is great for sever
 - It is extremely easy to learn and to write but also has the tools for complex scenarios
 - It has a great community to help out
 
-You can find the download and more information on their official site: [AutoHotkey Website](https://www.autohotkey.com/)
+You can find the download and more information on their official site: [AutoHotkey Website](https://www.autohotkey.com)
 
 So first I wrote down the characters I frequently use:
 

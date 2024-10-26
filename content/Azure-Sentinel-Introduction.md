@@ -79,10 +79,10 @@ The Azure Sentinel Preview was initially launched in February 2019 and introduce
 - Incident management **(GA: support for tagging, comments, and assignments automation)**
 - Incident investigation with investigation graph and automated entity mapping **(GA: Investigation graph out of preview)**
 - Automated incident response based on Log Analytics Playbooks
-- Threat Hunting capabilities **(GA: More out of the box queries)*** with custom Kusto queries classified by [MITRE ATT\&CK framework](https://attack.mitre.org/)
+- Threat Hunting capabilities **(GA: More out of the box queries)*** with custom Kusto queries classified by [MITRE ATT\&CK framework](https://attack.mitre.org)
   - with Azure Notebooks based hunting notebooks **(GA: More notebooks)**
   - Hunting Bookmarks **(GA)**
-- Machine learning based SecOps with [Fusion](https://azure.microsoft.com/en-us/blog/reducing-security-alert-fatigue-using-machine-learning-in-azure-sentinel/) **(GA: Now enabled by default and configurable in the UI)**
+- Machine learning based SecOps with [Fusion](https://azure.microsoft.com/en-us/blog/reducing-security-alert-fatigue-using-machine-learning-in-azure-sentinel) **(GA: Now enabled by default and configurable in the UI)**
 - Azure RBAC Support **(GA)**
 - Management API **(GA)**
 
@@ -122,7 +122,7 @@ Here is an example of the basic performance workbook and it's edit view with Mar
 
 ### Azure Notebooks
 
-[Azure Notebooks](https://notebooks.azure.com/) is Microsofts take on hosted [Jupyter notebooks](https://jupyter.org/). Jupyter notebooks are mostly use by Data Scientists to create and run code (often Python or R, but other languages aka. kernels are available) in the browser. There are many scenarios where you can use Jupyter Notebooks like
+[Azure Notebooks](https://notebooks.azure.com/) is Microsofts take on hosted [Jupyter notebooks](https://jupyter.org). Jupyter notebooks are mostly use by Data Scientists to create and run code (often Python or R, but other languages aka. kernels are available) in the browser. There are many scenarios where you can use Jupyter Notebooks like
 
 - Classroom sessions (create and share Notebooks for certain learning topics to all students)
 - Sharing notebooks for specific scenarios with the community
@@ -221,7 +221,7 @@ In our next part, we will cover every part of Azure Sentinel in depth and do som
 
 ## Links
 
-- [Azure Sentinel Documentation](https://docs.microsoft.com/en-us/azure/sentinel/)
+- [Azure Sentinel Documentation](https://docs.microsoft.com/en-us/azure/sentinel)
 - [Azure Sentinel Best practices](https://techcommunity.microsoft.com/t5/Azure-Sentinel/Best-practices-for-designing-an-Azure-Sentinel-or-Azure-Security/ba-p/832574)
 - [Azure Sentinel Github repo](https://github.com/Azure/Azure-Sentinel)
 - [Kusto Best Practices](https://docs.microsoft.com/en-us/azure/kusto/query/best-practices)

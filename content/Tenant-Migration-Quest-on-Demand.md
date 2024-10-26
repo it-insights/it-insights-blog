@@ -44,7 +44,7 @@ Anyone can create a demo account at Quest and configure the tool without having 
 
 ## Quest on Demand migration
 
-Let's take a look at the functionality and deployment of Quest on Demand Migration. You can find the alphabetically sorted [Quest on Demand Migration](https://www.quest.com/products/on-demand-migration) via the tab "Trials" on the [Quest homepage](https://Quest.com/) and you can create a free tenant for Quest on Demand with dedicated or Office 365 credentials via the item Start Free Trial.
+Let's take a look at the functionality and deployment of Quest on Demand Migration. You can find the alphabetically sorted [Quest on Demand Migration](https://www.quest.com/products/on-demand-migration) via the tab "Trials" on the [Quest homepage](https://Quest.com) and you can create a free tenant for Quest on Demand with dedicated or Office 365 credentials via the item Start Free Trial.
 During the registration, further information is requested and it can be directly defined in which location Quest on Demand should be rolled out and provided. This can only be configured during creation and cannot be adjusted later. That's because this value determines, which Azure Datacenter Quest on Demand uses to provide it's service.
 
 After completing the logon process, you have direct access to the Quest on Demand service and can start configuration and migration steps. First you will be forwarded to the dashboard of your Quest on Demand Tenant and you will see the status of the users and migrations/synchronizations later on. Because there is no connection to Source or target Tenant after the creation of the Quest on Demand, the first step would be to create a connection to the tenants.

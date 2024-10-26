@@ -44,7 +44,7 @@ Therefore, here is a tool powered approach that solves this problem and uses clo
 ::blogImage{src="posts/template-chooser/TemplateChooser0.png" alt="Old way vs. new way to work with templates"}
 ::
 
-The approach, the company [officeatwork AG](https://www.officeatwork.com/) offers with it's (paid) Apps [Template Chooser](https://docs.officeatwork365.com/manuals/template-chooser/introduction.html) / [Content Chooser](https://docs.officeatwork365.com/manuals/content-chooser/introduction.html) interacts directly with the office applications (Word, Excel, PowerPoint, Project, Teams) in form of Add-Ins. This new feature allows users to access the company's approved templates directly in Word via the respective add-in instead of having to navigate through shares or sites as before.
+The approach, the company [officeatwork AG](https://www.officeatwork.com) offers with it's (paid) Apps [Template Chooser](https://docs.officeatwork365.com/manuals/template-chooser/introduction.html) / [Content Chooser](https://docs.officeatwork365.com/manuals/content-chooser/introduction.html) interacts directly with the office applications (Word, Excel, PowerPoint, Project, Teams) in form of Add-Ins. This new feature allows users to access the company's approved templates directly in Word via the respective add-in instead of having to navigate through shares or sites as before.
 
 ## Template chooser
 

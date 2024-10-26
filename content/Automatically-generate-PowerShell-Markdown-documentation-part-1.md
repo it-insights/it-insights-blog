@@ -15,8 +15,8 @@ This blog series introduces a PowerShell module that automatically generated Mar
 
 This is a multi part article with the following parts:
 
-- [Part 1 - Use Abstract Syntax Trees (ASTs) to parse PowerShell files](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1/)
-- [Part 2 - Using the EPS Module to generate Markdown documents](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1/)
+- [Part 1 - Use Abstract Syntax Trees (ASTs) to parse PowerShell files](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1)
+- [Part 2 - Using the EPS Module to generate Markdown documents](https://itinsights.org/Automatically-generate-PowerShell-Markdown-documentation-part-1)
 
 ## Part 1 - Use Abstract Syntax Trees (ASTs) to parse PowerShell files
 

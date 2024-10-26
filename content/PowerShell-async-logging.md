@@ -58,9 +58,9 @@ As PowerShell jobs are much too clunky and don't have a intuitive way of exchang
 
 There are lots of good articles out there about PowerShell runspaces:
 
-[Beginning use of PowerShell runspaces: Part 1](https://devblogs.microsoft.com/scripting/beginning-use-of-powershell-runspaces-part-1/)
-[Beginning use of PowerShell runspaces: Part 2](https://devblogs.microsoft.com/scripting/beginning-use-of-powershell-runspaces-part-2/)
-[Beginning use of PowerShell runspaces: Part 3](https://devblogs.microsoft.com/scripting/beginning-use-of-powershell-runspaces-part-3/)
+[Beginning use of PowerShell runspaces: Part 1](https://devblogs.microsoft.com/scripting/beginning-use-of-powershell-runspaces-part-1)
+[Beginning use of PowerShell runspaces: Part 2](https://devblogs.microsoft.com/scripting/beginning-use-of-powershell-runspaces-part-2)
+[Beginning use of PowerShell runspaces: Part 3](https://devblogs.microsoft.com/scripting/beginning-use-of-powershell-runspaces-part-3)
 [RunspaceFactory Class](https://docs.microsoft.com/en-us/dotnet/api/system.management.automation.runspaces.runspacefactory?view=pscore-6.2.0)
 
 So we will create a separate runspace - aka. a thread - to handle all the logging logic for us.
@@ -109,7 +109,7 @@ $logEntries = [System.Collections.Concurrent.ConcurrentQueue[string]]::new()
 We use a concurrent queue, because all objects inside of the `System.Collections.Concurrent` namespace already handles threat locks by themselves. That means that we don't have to care about both threads (main and logging thread) accessing the object at the same time and causing race conditions. Thats also the reason why we don't use Synchronized objects, because they are not completely thread safe and could lead to performance degradation.
 
 ::callout{icon="i-heroicons-information-circle" color="blue"}
-If you want to learn more about thread safety in .NET, I recommend this article: [Thread-Safe Collections](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe/)
+If you want to learn more about thread safety in .NET, I recommend this article: [Thread-Safe Collections](https://docs.microsoft.com/en-us/dotnet/standard/collections/thread-safe)
 ::
 
 The time calls the function `logging` every 1 second. By calling `AppendText()` on the earlier created `$logFile` object, we get a Stream Writer back and save it into the `$sw` variable.

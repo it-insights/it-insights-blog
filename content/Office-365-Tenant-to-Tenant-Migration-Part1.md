@@ -17,7 +17,7 @@ Business changes, acquisitions, divestments, and corporate reorganizations often
 
 This is a multi part article with the following parts:
 
-- [Office 365 Tenant to Tenant Migration Fundamentals](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1/)
+- [Office 365 Tenant to Tenant Migration Fundamentals](https://itinsights.org/Office-365-Tenant-to-Tenant-Migration-Part1)
 
 Based on these requirements, an Office 365 Single Tenant is usually preferred and necessary. This article looks at merging the existing Office 365 tenants and data migration.
 

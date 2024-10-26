@@ -39,7 +39,7 @@ Azure Kubernetes Services (AKS) and Azure Data Explorer (ADX) clusters are SaaS 
 In this GitHub [repository](https://github.com/chrburmeister/start-stop-aks-adx), I habe created some templates for GitHub Actions and Azure Pipelines to start and stop AKS and ADX clusters. You can use these templates in your own pipelines to start and stop your services based on cron triggers/schedules.
 
 ::callout{icon="i-heroicons-exclamation-triangle" color="amber"}
-The repo only contains the templates, you need to write the calling pipelines yourself. You can check my blog series on GitHub Actions and Azure Pipelines [here](https://itinsights.org/azure-pipelines-migration-to-github-actions-part1/).
+The repo only contains the templates, you need to write the calling pipelines yourself. You can check my blog series on GitHub Actions and Azure Pipelines [here](https://itinsights.org/azure-pipelines-migration-to-github-actions-part1).
 ::
 
 ## Introduction

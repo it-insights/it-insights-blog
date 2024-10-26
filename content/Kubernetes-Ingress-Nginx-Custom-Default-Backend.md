@@ -39,7 +39,7 @@ The term **default backend** comes is defined by the Nginx developers:
 > <br>/healthz that returns 200
 > / that returns 404
 
-Source: [Nginx Ingres Controller Default Backend](https://kubernetes.github.io/ingress-nginx/user-guide/default-backend/).
+Source: [Nginx Ingres Controller Default Backend](https://kubernetes.github.io/ingress-nginx/user-guide/default-backend).
 
 In a nutshell, the default backend is another webserver that serves content if the ingress controller can not respont properly.
 In general, its a good idea to use a default backend so you can mask the fact your are using nginx.

@@ -163,7 +163,7 @@ Push-OutputBinding -Name Response -Value ([HttpResponseContext]@{
 
 ### Lets Encrypt configuration
 
-Next we need to define a route for the so called "HTTP-01" ACME challenge. As it is a fixed defined path, we have to route traffic to the path `http://{YOUR_DOMAIN}/.well-known/acme-challenge/{TOKEN}` directly to our reply function. Read more about how letsencrypt validation works from the [Challenge Types Documentation](https://letsencrypt.org/docs/challenge-types/).
+Next we need to define a route for the so called "HTTP-01" ACME challenge. As it is a fixed defined path, we have to route traffic to the path `http://{YOUR_DOMAIN}/.well-known/acme-challenge/{TOKEN}` directly to our reply function. Read more about how letsencrypt validation works from the [Challenge Types Documentation](https://letsencrypt.org/docs/challenge-types).
 
 So let's create a proxy called "letsencryptAcme" for the redirection with the token parameter captured in the `rest` variable. We use this variable in line 7 of our PowerShell function.
 

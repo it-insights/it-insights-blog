@@ -31,7 +31,7 @@ useContentHead(page)
 </script>
 
 <template>
-  <UPage class="mx-auto max-w-5xl p-4 relative">
+  <UPage class="relative mx-auto max-w-5xl p-4">
     <UPageHeader
       :title="page.title"
       class="py-4 sm:px-8"

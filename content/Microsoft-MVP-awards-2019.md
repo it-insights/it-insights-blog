@@ -23,7 +23,7 @@ That means that the three of us now combine 2 MCT, several MCSE and 2 MVP titles
 We are very proud to be part of this journey and this great community and are looking forward to join the MVP summit 2020 in Seattle.
 Till then we will continue to contribute to our local communities, our blog and attend conferences.
 
-[{% image center MVP_logo_horizontal.png %}](https://mvp.microsoft.com/)
+[{% image center MVP_logo_horizontal.png %}](https://mvp.microsoft.com)
 
 At last, we want to give you a quote that motivated us a lot in the past month:
 

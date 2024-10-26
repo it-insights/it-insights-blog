@@ -117,7 +117,7 @@ The ThrottleLimit parameter indicated the number of concurrent executions - the 
 
 This is only available for the ForEach-Object cmdlet, NOT the foreach keyword.
 
-I'd suggest you read the following [blog post](https://devblogs.microsoft.com/powershell/powershell-foreach-object-parallel-feature/) from Paul Higinbotham to get familiar with the new feature.
+I'd suggest you read the following [blog post](https://devblogs.microsoft.com/powershell/powershell-foreach-object-parallel-feature) from Paul Higinbotham to get familiar with the new feature.
 
 ## Windows PowerShell compatibility
 
