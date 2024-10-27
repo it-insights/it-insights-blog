@@ -14,10 +14,7 @@ tags:
   - Serverless
 category: Azure
   - Terraform
-  - Infrastructure as Code
   - Cloud Infrastrucure
-  - PowerShell
-  - Automation
 author: Christoph Burmeister
 
 date: 2022-02-01 05:45:00

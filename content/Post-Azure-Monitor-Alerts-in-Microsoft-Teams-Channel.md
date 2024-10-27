@@ -14,10 +14,7 @@ tags:
   - Azure Pipelines
   - GitHub
 category:
-  - Azure
   - Monitoring
-  - Automation
-  - Serverless
   - PowerShell
   - Teams
 author: Christoph Burmeister

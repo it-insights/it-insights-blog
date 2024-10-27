@@ -7,8 +7,6 @@ tags:
   - PowerShell
 category:
   - PowerShell
-  - Azure
-  - Automation
   - Microsoft Graph
 author: Christoph Burmeister
 date: 2022-11-15 05:45:00

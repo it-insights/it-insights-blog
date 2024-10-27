@@ -1,13 +1,8 @@
 ---
 title: Terraform - create Blocks Dynamically - using the Dynamic Block
 category:
-  - PowerShell
-  - Azure
   - Terraform
   - IaC
-  - Infrastructure
-  - Automation
-  - PowerShell
 author: Christoph Burmeister
 keywords:
   - PowerShell

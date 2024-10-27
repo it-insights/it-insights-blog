@@ -16,14 +16,8 @@ tags:
   - PowerShell
   - MVP
 category: Azure
-  - DevOps
   - GitHub
   - Continuous Integration
-  - Continuous Delivery
-  - CI/CD
-  - Cloud Infrastrucure
-  - PowerShell
-  - Automation
 author: Christoph Burmeister
 
 date: 2022-03-28 05:45:00
