@@ -10,7 +10,7 @@ IT Insights Blog based on Nuxt and Nuxt Content hosted on Azure Static Web Apps
 
 ### Local Development
 
-To test the changes locally, you can use ````pnpm dev``` to execute them locally.
+To test the changes locally, you can use "pnpm dev" to execute them locally.
 
 ## Creation of a Blogpost
 
@@ -20,4 +20,4 @@ If images, videos or other content is used for the blog post, a folder with the 
 
 ### Draft Blogpost
 
-To create this initial as a draft so that it is not immediately live, the header ````draft: true``` must be set.
+To create this initial as a draft so that it is not immediately live, the header "draft: true" must be set.
