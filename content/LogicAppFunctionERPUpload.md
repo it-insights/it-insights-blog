@@ -31,6 +31,7 @@ The goal is to have e-mails arriving by e-mail (PDF) automatically imported and 
 The first and most important question is which ERP software and which interface it offers. In this case, it was relatively easy to find out, because we have a REST API with exact descriptions, so we could start planning.
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241027233937.png" alt="Overview"}
+::
 
 The next step is to create a brief overview of the services. Due to the simple requirement, it is recommended to use Logic App for email processing, because it has ready-made connectors and is relatively inexpensive for the intended purpose. In connection with an Azure Function and a Storage Account (for storing the files), it is efficient and easy to maintain and implement.
 
@@ -74,6 +75,7 @@ We use the Microsoft Azure Logic App to monitor and trigger the shared mailbox. 
 he structure of the Logic app is relatively simple and looks as follows:
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028130536.png" alt="LogicApp"}
+::
 
 #### Logic App Plan
 
@@ -86,6 +88,7 @@ Microsoft offers a variety of plans and SKUs for Logic Apps. In this case, a Log
 The trigger for the function is the ready-made connector from Microsoft for Exchange Online: ‘When a new email arrives in a shared mailbox (V2)’
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028131221.png" alt="LogicApp"}
+::
 
 First you have to log in to the connector with an M365 account that has access to the shared mailbox. This account is used in the backend to establish the connection and must not be deleted after this.
 
@@ -115,12 +118,14 @@ As actions we have 2 parallel streams that are processed. 1. stream is the proce
 The 1st stream is very simple: we take the attachments from the trigger into the For Each loop and check them for the type by means of condition using contains ‘pdf.’. If this is true, the files with the current utc timestamp and attachment name are stored in the previously created storage account using the Create blob ```‘@{utcNow()}_@{items(’For_each_2‘)?[’name']}’"``.
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028132327.png" alt="LogicAppDetail"}
+::
 
 ##### Stream 2 - Archive files / CleanUp
 
 In the 2nd Stream clean-up, the current blob (importinvoice) is read out and selected using a filter ```@{addDays(utcNow(), -3)}`` (everything older than 3 days) and moved to the archive container and then deleted in the import.
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028133205.png" alt="LogicAppDetail2"}
+::
 
 ### 4. Azure Function
 
@@ -133,6 +138,7 @@ In order to be able to automate the workflow relatively quickly, I decided to us
 We use the Azure Blob Trigger as the trigger of the function and use our created storage account and the container ‘invoiceimport’
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028133955.png" alt="FunctionTrigger"}
+::
 
 ##### Code / PowerShell
 
@@ -182,5 +188,6 @@ try {
 As mentioned in the section above, the API key is not created and set in the code but in the environemnt variable for the test. It is recommended to save this in an Azure Key Vault and access it using managed identity.
 
 ::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028134547.png" alt="FunctionEv"}
+::
 
 In summary, this is now a workflow that automatically makes incoming documents that have been sent to a mailbox by e-mail available in the ERP system Lexoffice via Microsoft Azure Service.
