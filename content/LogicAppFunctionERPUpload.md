@@ -47,7 +47,7 @@ Note: A shared mailbox is recommended instead of a Microsoft group, as the share
 
 Beispiel Erstellung Shared Mailbox mit PowerShell:
 
-```powershell
+```powershell[NewSharedMailbox.ps1]
 New-Mailbox -Shared -Name "Import" -DisplayName "Import" -Alias Import
 ```
 
@@ -55,13 +55,13 @@ New-Mailbox -Shared -Name "Import" -DisplayName "Import" -Alias Import
 
 We use an Azure Storage account to store the files, if this does not yet exist, one should be created. Basically, local redudant and generalv2 are absolutely fine in this case.
 
-```powershell
+```powershell[NewStorageAccount.ps1]
 az storage account create --name stgeuwerpimport --resource-group rgpeuwerpimport --location westeurope --sku Standard_LRS
 ```
 
 In the next step, it is very useful to create 2 containers in the storage account "invoiceimport" & "invoicearchive"
 
-```powershell
+```powershell[NewStorageContainer.ps1]
 az storage container create --name invoiceimport --account-name stgeuwerpimport
 az storage container create --name invoicearchive --account-name stgeuwerpimport
 ```
@@ -146,7 +146,7 @@ The following code was created to access the lexoffice API (files) via API Reuqe
 
 This serves as an example of how an upload can be carried out using a PowerShell function and is not a final function with error handling etc.
 
-```powershell
+```powershell[InvoiceUploadLexofficeFunction.ps1]
 # Input bindings are passed in via param block.
 
 param([byte[]] $InputBlob, $TriggerMetadata)
@@ -187,7 +187,7 @@ try {
 
 As mentioned in the section above, the API key is not created and set in the code but in the environemnt variable for the test. It is recommended to save this in an Azure Key Vault and access it using managed identity.
 
-::blogImage{src="posts\LogicAppFunctionERPUpload\Pasted image 20241028133955.png" alt="FunctionEv"}
+::blogImage{src="posts\LogicAppFunctionERPUpload\Pasted image 20241028134547.png" alt="FunctionEv"}
 ::
 
 In summary, this is now a workflow that automatically makes incoming documents that have been sent to a mailbox by e-mail available in the ERP system Lexoffice via Microsoft Azure Service.
