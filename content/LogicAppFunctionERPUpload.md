@@ -187,7 +187,7 @@ try {
 
 As mentioned in the section above, the API key is not created and set in the code but in the environemnt variable for the test. It is recommended to save this in an Azure Key Vault and access it using managed identity.
 
-::blogImage{src="posts/LogicAppFunctionERPUpload/Pasted image 20241028134547.png" alt="FunctionEv"}
+::blogImage{src="posts\LogicAppFunctionERPUpload\Pasted image 20241028133955.png" alt="FunctionEv"}
 ::
 
 In summary, this is now a workflow that automatically makes incoming documents that have been sent to a mailbox by e-mail available in the ERP system Lexoffice via Microsoft Azure Service.
