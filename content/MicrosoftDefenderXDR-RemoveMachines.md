@@ -6,7 +6,6 @@ tags:
   - Defender XDR
   - Azure
 category: Defender
-draft: true
 date: 2024-09-08T03:15:00.000Z
 ---
 
